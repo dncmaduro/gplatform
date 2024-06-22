@@ -5,9 +5,10 @@
         <video
           autoplay
           loop
+          muted
           class="w-[700px] sm:h-[400px] h-[200px] object-contain"
         >
-          <source src="/public/404.mp4" type="video/mp4" />
+          <source :src="videoURL" type="video/mp4" />
         </video>
       </div>
       <h1 class="md:text-xl text-xs font-medium my-6">
@@ -32,6 +33,8 @@
 definePageMeta({
   colorMode: "light",
 });
+
+const videoURL = '/404.mp4';
 </script>
 
 <style scoped></style>
