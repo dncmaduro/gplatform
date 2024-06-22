@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const routes = ref([
-  { path: "/members", name: "Members" },
-  { path: "/products", name: "Products" },
-  { path: "/recruitment", name: "Recruitment" },
-  { path: "/event", name: "Event" },
+  { path: '/members', name: 'Members' },
+  { path: '/products', name: 'Products' },
+  { path: '/recruitment', name: 'Recruitment'},
+  { path: '/event', name: 'Event' },
 ]);
 </script>
 
