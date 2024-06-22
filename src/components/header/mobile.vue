@@ -9,7 +9,7 @@
 
   <USlideover v-model="isOpen" side="left">
     <div class="p-4 flex flex-1 flex-col gap-8 items-center justify-center">
-      <HeaderLogo />
+      <CommonLogo />
       <ul class="flex flex-col gap-8 text-base flex-1 w-full">
         <li
           v-for="route in props.routes"
