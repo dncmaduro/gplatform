@@ -1,19 +1,10 @@
 <script setup lang="ts">
-const items = [
-  [
-    {
-      label: 'hello',
-      slot: 'account',
-      disabled: true,
-    },
-  ],
-  [
-    {
-      label: 'Sign out',
-      icon: 'i-mdi-logout',
-    },
-  ],
-];
+const routes = ref([
+  { path: '/members', name: 'Members' },
+  { path: '/products', name: 'Products' },
+  { path: '/recruitment', name: 'Recruitment' },
+  { path: '/event', name: 'Event' },
+]);
 </script>
 
 <template>
@@ -24,38 +15,28 @@ const items = [
       class="flex md:justify-between justify-start gap-4 md:gap-0 items-center"
     >
       <div class="md:hidden">
-        <HeaderMobile />
+        <HeaderMobile :routes="routes" />
       </div>
       <HeaderLogo />
-      <ul class="md:flex gap-8 text-base leading-5 hidden">
-        <li>
-          <nuxt-link to="/members">Members</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/products">Products</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/recruitment">Recruitment</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/event">Event</nuxt-link>
+      <ul class="md:flex gap-2 text-base leading-5 hidden">
+        <li
+          v-for="route in routes"
+          :key="route.path"
+          class="py-2"
+          :class="$route.path === route.path ? 'border-b border-primary' : ''"
+        >
+          <nuxt-link :to="route.path" class="px-1.5 py-2">{{
+            route.name
+          }}</nuxt-link>
         </li>
       </ul>
       <div class="flex gap-4">
-        <UInput
-          icon="i-heroicons-magnifying-glass-20-solid"
-          size="lg"
-          class="!rounded-full w-44"
-          color="white"
-          :trailing="false"
-          placeholder="Search..."
-          :ui="{ rounded: 'rounded-full' }"
-        />
+        <CommonSearch size="lg" />
         <UButton
           icon="i-heroicons-globe-asia-australia"
           size="lg"
-          class="!rounded-full"
-          color="gray"
+          class="!rounded-full !border-gray-400 !ring-gray-3 00"
+          color="black"
           variant="outline"
           label="Language"
           :trailing="false"
