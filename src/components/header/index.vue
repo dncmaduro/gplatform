@@ -17,7 +17,7 @@ const routes = ref([
       <div class="md:hidden">
         <HeaderMobile :routes="routes" />
       </div>
-      <HeaderLogo />
+      <CommonLogo />
       <ul class="md:flex gap-2 text-base leading-5 hidden">
         <li
           v-for="route in routes"
