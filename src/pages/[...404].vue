@@ -31,7 +31,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  colorMode: "light",
+  colorMode: 'light',
 });
 
 const videoURL = '/404.mp4';
