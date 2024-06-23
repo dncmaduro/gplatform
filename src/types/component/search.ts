@@ -1,8 +1,8 @@
 import type { InputSize } from './input';
 
 export type CommonSearch = {
-  filter?: boolean;
+  filterOption?: string[];
   search?: boolean;
   placeholder?: string;
-  size: InputSize;
+  size?: InputSize;
 };
