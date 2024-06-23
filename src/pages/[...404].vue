@@ -11,30 +11,25 @@
           <source :src="videoURL" type="video/mp4" />
         </video>
       </div>
-      <h1 class="sm:text-xl text-xs font-medium my-6">
+      <span class="sm:text-xl text-xs my-6">
         The page you're looking for doesn't seem to exist
-      </h1>
+      </span>
       <UButton
-        label="Go to Homepage"
+        icon="i-heroicons-arrow-right-solid"
+        size="sm"
+        class="rounded-2xl px-4 py-3 max-w-[170px] mx-auto"
         color="primary"
         variant="solid"
-        class="rounded-[20px] px-4 py-3 max-w-[170px] mx-auto font-normal"
+        label="Go to Homepage"
         @click="$router.push('/')"
-      >
-        <template #trailing>
-          <UIcon name="i-heroicons-arrow-right-20-solid" class="w-5 h-5" />
-        </template>
-      </UButton>
+        trailing
+      />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-definePageMeta({
-  colorMode: 'light',
-});
-
-const videoURL = '/404.mp4';
+const videoURL = "/404.mp4";
 </script>
 
-<style scoped></style>
+
