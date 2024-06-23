@@ -22,7 +22,9 @@
     "string-width": "4.2.3"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
     "@types/node": "^20.14.8",
+    "pinia": "^2.1.7",
     "typescript": "^5.5.2"
   }
 }
