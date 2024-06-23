@@ -11,7 +11,7 @@
           <source :src="videoURL" type="video/mp4" />
         </video>
       </div>
-      <h1 class="md:text-xl text-xs font-medium my-6">
+      <h1 class="sm:text-xl text-xs font-medium my-6">
         The page you're looking for doesn't seem to exist
       </h1>
       <UButton
