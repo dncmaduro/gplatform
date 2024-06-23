@@ -2,7 +2,7 @@
 const routes = ref([
   { path: '/members', name: 'Members' },
   { path: '/products', name: 'Products' },
-  { path: '/recruitment', name: 'Recruitment' },
+  { path: '/recruitment', name: 'Recruitment'},
   { path: '/event', name: 'Event' },
 ]);
 </script>
@@ -11,8 +11,12 @@ const routes = ref([
   <div
     class="w-full fixed top-0 bg-white z-50 shadow-md md:px-8 px-4 py-4 text-black"
   >
+    <UContainer v-if="$route.name === '404'">
+      <Header404 />
+    </UContainer>
     <UContainer
       class="flex md:justify-between justify-start gap-4 md:gap-0 items-center"
+      v-else
     >
       <div class="md:hidden">
         <HeaderMobile :routes="routes" />

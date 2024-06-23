@@ -17,6 +17,7 @@
     </div>
   </UContainer>
 </template>
+
 <script setup lang="ts">
 const beadcumbLinks = ref([
   { label: 'Home', to: '/' },
