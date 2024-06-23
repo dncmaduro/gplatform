@@ -11,6 +11,7 @@ export default defineNuxtConfig({
         },
       },
     ],
+    '@pinia/nuxt',
   ],
   colorMode: {
     preference: 'light',
@@ -18,4 +19,4 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   srcDir: 'src',
   css: ['~/assets/css/global.css', '~/assets/css/variables.css'],
-});
+})
