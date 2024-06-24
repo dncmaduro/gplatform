@@ -11,28 +11,23 @@
       <span class="md:text-6xl text-2xl">GDSC HANU</span>
     </UContainer>
     <UContainer
-      class="flex flex-wrap justify-center items-center gap-10 my-10"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-10"
     >
-    
-      <div
-        v-for="(testimonial, index) in testimonials"
-        :key="index"
-        class="md:w-[40%] xl:w-[30%]"
-      >
+      <div v-for="testimonial in testimonials" :key="testimonial.testimonialId">
         <UCard class="flex flex-col">
           <div class="mb-5">
             <span class="leading-6">{{ testimonial.comment }}</span>
           </div>
           <div class="flex flex-row items-center gap-4">
-            <div class="w-10 h-10">
+            <span class="w-10 h-10">
               <NuxtImg
                 :src="testimonial.icon"
                 class="w-full h-full rounded-full object-fit"
               ></NuxtImg>
-            </div>
+            </span>
             <div class="flex flex-col">
-              <span class="font-bold text-xl">{{ testimonial.userName }}</span>
-              <span class="text-xs">{{ testimonial.userRole }}</span>
+              <p class="font-bold text-xl">{{ testimonial.userName }}</p>
+              <p class="text-xs">{{ testimonial.userRole }}</p>
             </div>
           </div>
         </UCard>
@@ -43,10 +38,11 @@
 
 
 <script setup lang="ts">
-import type { Testimonial } from '~/types/recruitment/testimonial'
+import type { Testimonial } from "~/types/recruitment/testimonial";
 
 const testimonials = ref<Testimonial[]>([
   {
+    testimonialId: 1,
     comment:
       "I get to work with super smart and reliable colleagues. Working at Zalo makes me always feel strongly supported to learn, everyone here embrace real-world challenges and be willing to support, to share knowledge and experiences together. Thanks to that, I developed not only my expertise but also my communication skills, time management and problem solving skills.",
     icon: 'https://avatars.githubusercontent.com/u/739984?v=4"',
@@ -54,6 +50,7 @@ const testimonials = ref<Testimonial[]>([
     userRole: "Co founder & President",
   },
   {
+    testimonialId: 2,
     comment:
       "I get to work with super smart and reliable colleagues. Working at Zalo makes me always feel strongly supported to learn, everyone here embrace real-world challenges and be willing to support, to share knowledge and experiences together. Thanks to that, I developed not only my expertise but also my communication skills, time management and problem solving skills.",
     icon: 'https://avatars.githubusercontent.com/u/739984?v=4"',
@@ -61,6 +58,7 @@ const testimonials = ref<Testimonial[]>([
     userRole: "Co founder & President",
   },
   {
+    testimonialId: 3,
     comment:
       "I get to work with super smart and reliable colleagues. Working at Zalo makes me always feel strongly supported to learn, everyone here embrace real-world challenges and be willing to support, to share knowledge and experiences together. Thanks to that, I developed not only my expertise but also my communication skills, time management and problem solving skills.",
     icon: 'https://avatars.githubusercontent.com/u/739984?v=4"',
@@ -68,6 +66,7 @@ const testimonials = ref<Testimonial[]>([
     userRole: "Co founder & President",
   },
   {
+    testimonialId: 4,
     comment:
       "I get to work with super smart and reliable colleagues. Working at Zalo makes me always feel strongly supported to learn, everyone here embrace real-world challenges and be willing to support, to share knowledge and experiences together. Thanks to that, I developed not only my expertise but also my communication skills, time management and problem solving skills.",
     icon: 'https://avatars.githubusercontent.com/u/739984?v=4"',
@@ -75,6 +74,7 @@ const testimonials = ref<Testimonial[]>([
     userRole: "Co founder & President",
   },
   {
+    testimonialId: 5,
     comment:
       "I get to work with super smart and reliable colleagues. Working at Zalo makes me always feel strongly supported to learn, everyone here embrace real-world challenges and be willing to support, to share knowledge and experiences together. Thanks to that, I developed not only my expertise but also my communication skills, time management and problem solving skills.",
     icon: 'https://avatars.githubusercontent.com/u/739984?v=4"',
@@ -82,6 +82,7 @@ const testimonials = ref<Testimonial[]>([
     userRole: "Co founder & President",
   },
   {
+    testimonialId: 6,
     comment:
       "I get to work with super smart and reliable colleagues. Working at Zalo makes me always feel strongly supported to learn, everyone here embrace real-world challenges and be willing to support, to share knowledge and experiences together. Thanks to that, I developed not only my expertise but also my communication skills, time management and problem solving skills.",
     icon: 'https://avatars.githubusercontent.com/u/739984?v=4"',
@@ -89,26 +90,5 @@ const testimonials = ref<Testimonial[]>([
     userRole: "Co founder & President",
   },
 ]);
-
-const windowWidth = ref(0);
-const copyTestimonials = [...testimonials.value];
-
-const handleResize = () => {
-  windowWidth.value = window.innerWidth;
-  if(windowWidth.value < 768){
-    return testimonials.value = testimonials.value.slice(0,1);
-  }
-   return testimonials.value = copyTestimonials;
-};
-
-onMounted(() => {
-  window.addEventListener('resize', handleResize);
-  handleResize(); 
-});
-
-onUnmounted(() => {
-  window.removeEventListener('resize', handleResize);
-});
-
 </script>
 
