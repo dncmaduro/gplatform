@@ -1,6 +1,6 @@
 <template>
   <Recruitment />
-  <RecruitmentTestinomial/>
+  <RecruitmentTestimonials/>
 </template>
 
 <script setup lang="ts"></script>

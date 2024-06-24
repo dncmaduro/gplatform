@@ -43,7 +43,9 @@
 
 
 <script setup lang="ts">
-const testimonials = ref([
+import type { Testimonial } from '~/types/recruitment/testimonial'
+
+const testimonials = ref<Testimonial[]>([
   {
     comment:
       "I get to work with super smart and reliable colleagues. Working at Zalo makes me always feel strongly supported to learn, everyone here embrace real-world challenges and be willing to support, to share knowledge and experiences together. Thanks to that, I developed not only my expertise but also my communication skills, time management and problem solving skills.",
