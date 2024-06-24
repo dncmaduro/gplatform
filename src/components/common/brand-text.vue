@@ -1,10 +1,8 @@
 <template>
   <div :class="color">
-    <span>
     <span>{{ props.prefix }}</span>
     <span>{{ label }}</span>
     <span>{{ props.suffix }}</span>
-    </span>
   </div>
 </template>
 
