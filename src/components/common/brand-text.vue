@@ -1,7 +1,7 @@
 <template>
-  <div :class="color">
+  <div>
     <span>{{ props.prefix }}</span>
-    <span>{{ label }}</span>
+    <span :class="color">{{ label }}</span>
     <span>{{ props.suffix }}</span>
   </div>
 </template>
