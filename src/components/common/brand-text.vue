@@ -1,8 +1,10 @@
 <template>
   <div :class="color">
-    {{ props.prefix }}
+    <span>
+    <span>{{ props.prefix }}</span>
     <span>{{ label }}</span>
-    {{ props.suffix }}
+    <span>{{ props.suffix }}</span>
+    </span>
   </div>
 </template>
 
@@ -17,6 +19,5 @@ const color = computed(() => {
 });
 
 const label = computed(() => props.label.replace(/\s+/g, "_"));
-console.log(label);
 
 </script>
