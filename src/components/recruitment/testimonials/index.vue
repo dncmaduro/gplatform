@@ -5,8 +5,10 @@
     >
       <span class="md:text-6xl text-2xl">Why</span>
       <CommonBrandText
+        prefix="</"
         label="choose"
-        class="md:text-6xl text-2xl text-primary"
+        suffix=">"
+        class="md:text-6xl text-2xl"
       ></CommonBrandText>
       <span class="md:text-6xl text-2xl">GDSC HANU</span>
     </UContainer>
@@ -19,12 +21,7 @@
             <span class="leading-6">{{ testimonial.comment }}</span>
           </div>
           <div class="flex flex-row items-center gap-4">
-            <span class="w-10 h-10">
-              <NuxtImg
-                :src="testimonial.icon"
-                class="w-full h-full rounded-full object-fit"
-              ></NuxtImg>
-            </span>
+            <UAvatar :src="testimonial.icon" size="md" alt="Avatar" />
             <div class="flex flex-col">
               <p class="font-bold text-xl">{{ testimonial.userName }}</p>
               <p class="text-xs">{{ testimonial.userRole }}</p>
