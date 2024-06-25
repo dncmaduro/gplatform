@@ -1,19 +1,24 @@
 <template>
   <div class="flex gap-8 flex flex-col lg:flex-row">
-    <CommonSearch
-      placeholder="Developer ..."
-      @search="handleSearch"
-      v-model="searchData"
-      search
-      size="xl"
-      class="grow"
-    />
+    <CommonSearch placeholder="Developer ..." search size="xl" class="grow" />
     <div class="flex gap-8 flex-wrap justify-center">
       <USelect
-        v-for="(filterOptions, index) in filtersOptions"
-        :key="filterOptions[0]"
-        v-model="filters[index]"
-        :options="filterOptions"
+        :options="teamOptions"
+        size="xl"
+        class="rounded-md min-w-[132px]"
+      />
+      <USelect
+        :options="genOptions"
+        size="xl"
+        class="rounded-md min-w-[132px]"
+      />
+      <USelect
+        :options="levelOptions"
+        size="xl"
+        class="rounded-md min-w-[132px]"
+      />
+      <USelect
+        :options="sortOptions"
         size="xl"
         class="rounded-md min-w-[132px]"
       />
@@ -22,20 +27,8 @@
 </template>
 
 <script setup lang="ts">
-const filtersOptions = [
-  ['All Team', 'Frontend'],
-  ['All Gen', 'Gen 1'],
-  ['All Level'],
-  ['Sort by'],
-]
-const searchData = ref(null)
-const filters = ref<string[]>([])
-onMounted(() => {
-  filtersOptions.map((filterOptions) => {
-    filters.value.push(filterOptions[0])
-  })
-})
-const handleSearch = () => {
-  console.log(searchData.value, filters.value)
-}
+const teamOptions = ['All Teams']
+const genOptions = ['All Gens']
+const levelOptions = ['All Levels']
+const sortOptions = ['Sort By']
 </script>
