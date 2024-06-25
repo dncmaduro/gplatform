@@ -36,8 +36,8 @@ const genOptions = ref(['All Gens'])
 const levelOptions = ref(['All Levels'])
 const sortOptions = ref(['Sort By'])
 
-const teamOption = ref()
-const genOption = ref()
-const levelOption = ref()
-const sortOption = ref()
+const teamOption = ref(teamOptions.value[0])
+const genOption = ref(genOptions.value[0])
+const levelOption = ref(levelOptions.value[0])
+const sortOption = ref(sortOptions.value[0])
 </script>
