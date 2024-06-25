@@ -1,7 +1,6 @@
 <template>
   <UInput
     v-model="searchData"
-    @keyup.enter="handleSearch"
     icon="i-heroicons-magnifying-glass"
     :size="props.size ? props.size : undefined"
     class="rounded-full"
@@ -9,6 +8,7 @@
     :trailing="false"
     :placeholder="props.placeholder"
     :ui="{ rounded: 'rounded-full', icon: { trailing: { pointer: '' } } }"
+    @keyup.enter="handleSearch"
   >
     <template #trailing>
       <div class="flex gap-2">
@@ -23,12 +23,12 @@
         />
         <UButton
           v-if="props.search"
-          @click="handleSearch"
           :disabled="!!!searchData"
           :loading="loading"
           size="2xs"
           label="Search"
           class="cursor-pointer rounded-full"
+          @click="handleSearch"
         />
       </div>
     </template>
@@ -36,35 +36,35 @@
 </template>
 
 <script setup lang="ts">
-import type { CommonSearch } from "~/types/component/search";
+import type { CommonSearch } from '~/types/component/search';
 
 const emit = defineEmits<{
-  (e: "search", searchData: string | null, filterOption?: string): void;
+  (e: 'search', searchData: string | null, filterOption?: string): void;
 }>();
 
 const props = withDefaults(defineProps<CommonSearch>(), {
   search: false,
-  placeholder: "Search",
-  size: "xl",
+  placeholder: 'Search',
+  size: 'xl',
   loading: true,
 });
-const filterOption = ref('')
+const filterOption = ref('');
 
-const searchData = ref(null)
+const searchData = ref(null);
 
-onMounted(()=>{
-  if(props.filterOption){
-    filterOption.value = props.filterOption[0]
+onMounted(() => {
+  if (props.filterOption) {
+    filterOption.value = props.filterOption[0];
   }
-})
+});
 
-const loading = computed(()=> props.loading)
+const loading = computed(() => props.loading);
 
 const handleSearch = () => {
   if (searchData.value && filterOption.value) {
-    emit("search", searchData.value, filterOption.value);
+    emit('search', searchData.value, filterOption.value);
     return;
   }
-  emit("search", searchData.value);
+  emit('search', searchData.value);
 };
 </script>

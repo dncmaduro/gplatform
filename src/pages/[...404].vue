@@ -2,12 +2,7 @@
   <div class="max-h-full">
     <div class="flex flex-col text-center w-full p-8">
       <div class="flex justify-center items-center w-full h-full">
-        <video
-          autoplay
-          loop
-          muted
-          class="w-[700px] sm:h-[400px] h-[200px] object-contain"
-        >
+        <video autoplay loop muted class="w-[700px] sm:h-[400px] h-[200px] object-contain">
           <source :src="videoURL" type="video/mp4" />
         </video>
       </div>
@@ -21,15 +16,13 @@
         color="primary"
         variant="solid"
         label="Go to Homepage"
-        @click="$router.push('/')"
         trailing
+        @click="$router.push('/')"
       />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const videoURL = "/404.mp4";
+const videoURL = '/404.mp4';
 </script>
-
-

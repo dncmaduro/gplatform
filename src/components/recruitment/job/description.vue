@@ -12,8 +12,8 @@
       </h2>
     </div>
     <ul class="list-disc pl-5 space-y-2 text-gray-950">
-      <li v-for="item in descriptionItems" :key="id">
-        {{ item }}
+      <li v-for="item in descriptionItems" :key="item.id">
+        {{ item.content }}
       </li>
     </ul>
   </div>
@@ -22,5 +22,5 @@
 <script setup lang="ts">
 import type { JobDescription } from '~/types/recruitment/job';
 
-const { id, title, icon, descriptionItems } = defineProps<JobDescription>();
+const { title, icon, descriptionItems } = defineProps<JobDescription>();
 </script>

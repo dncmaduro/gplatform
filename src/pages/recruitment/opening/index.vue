@@ -1,21 +1,21 @@
 <template>
-  <CommonBreadcumb :links="beadcumbLinks" />
-  <UContainer class="flex flex-col items-center flex-1">
-    <div class="flex gap-8 flex-col text-center">
-      <div class="text-center">
-        <CommonBrandText prefix="<" label="Opening" suffix="/>" />
-        <h1 class="md:text-8xl text-3xl text-black font-bold text-center">
-          position
-        </h1>
+  <section>
+    <CommonBreadcumb :links="beadcumbLinks" />
+    <UContainer class="flex flex-1 flex-col items-center">
+      <div class="flex flex-col gap-8 text-center">
+        <div class="text-center">
+          <CommonBrandText prefix="<" label="Opening" suffix="/>" />
+          <h1 class="text-center text-3xl font-bold text-black md:text-8xl">position</h1>
+        </div>
+        <p class="text-base text-gray-950">
+          Join us today and keep maximizing your potential thanks to working with
+          <br />
+          the best talents, in sizable projects that impact on Tech Community.
+        </p>
+        <CommonSearch placeholder="Developer..." search size="xl" />
       </div>
-      <p class="text-gray-950 text-base">
-        Join us today and keep maximizing your potential thanks to working with
-        <br />
-        the best talents, in sizable projects that impact on Tech Community.
-      </p>
-      <CommonSearch placeholder="Developer..." search size="xl" />
-    </div>
-  </UContainer>
+    </UContainer>
+  </section>
 </template>
 
 <script setup lang="ts">
