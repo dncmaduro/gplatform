@@ -5,4 +5,5 @@ export type CommonSearch = {
   search?: boolean;
   placeholder?: string;
   size?: InputSize;
+  loading?: boolean;
 };
