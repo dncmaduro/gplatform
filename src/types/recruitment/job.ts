@@ -7,9 +7,14 @@ export type JobItem = {
   description: string;
 };
 
+export type DescriptionItem = {
+  id: string;
+  content: string;
+};
+
 export type JobDescription = {
   id?: string;
   icon: string;
   title: BrandText;
-  descriptionItems: string[];
+  descriptionItems: DescriptionItem[];
 };

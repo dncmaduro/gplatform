@@ -15,8 +15,8 @@ const routes = ref([
       <Header404 />
     </UContainer>
     <UContainer
-      class="flex md:justify-between justify-start gap-4 md:gap-0 items-center"
       v-else
+      class="flex md:justify-between justify-start gap-4 md:gap-0 items-center"
     >
       <div class="md:hidden">
         <HeaderMobile :routes="routes" />
