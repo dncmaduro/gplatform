@@ -1,6 +1,8 @@
 <template>
-  <Recruitment />
-  <RecruitmentTestimonials/>
+  <section>
+    <Recruitment />
+    <RecruitmentTestimonials />
+  </section>
 </template>
 
 <script setup lang="ts"></script>
