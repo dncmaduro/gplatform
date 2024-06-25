@@ -5,6 +5,7 @@
     icon="i-heroicons-magnifying-glass"
     :size="props.size ? props.size : undefined"
     class="rounded-full"
+    :disabled="loading"
     :trailing="false"
     :placeholder="props.placeholder"
     :ui="{ rounded: 'rounded-full', icon: { trailing: { pointer: '' } } }"
@@ -15,6 +16,7 @@
           v-if="props.filterOption"
           v-model="filterOption"
           :options="props.filterOption"
+          :disabled="loading"
           variant="none"
           size="2xs"
           option-attribute="name"
@@ -23,6 +25,7 @@
           v-if="props.search"
           @click="handleSearch"
           :disabled="!!!searchData"
+          :loading="loading"
           size="2xs"
           label="Search"
           class="cursor-pointer rounded-full"
@@ -43,6 +46,7 @@ const props = withDefaults(defineProps<CommonSearch>(), {
   search: false,
   placeholder: "Search",
   size: "xl",
+  loading: true,
 });
 const filterOption = ref('')
 
@@ -53,6 +57,8 @@ onMounted(()=>{
     filterOption.value = props.filterOption[0]
   }
 })
+
+const loading = computed(()=> props.loading)
 
 const handleSearch = () => {
   if (searchData.value && filterOption.value) {
