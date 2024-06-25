@@ -3,7 +3,7 @@
   <UContainer class="flex flex-col items-center flex-1">
     <div class="flex gap-8 flex-col text-center">
       <div class="text-center">
-        <CommonBrandText label="Opening" />
+        <CommonBrandText prefix="<" label="Opening" suffix="/>" />
         <h1 class="md:text-8xl text-3xl text-black font-bold text-center">
           position
         </h1>

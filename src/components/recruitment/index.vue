@@ -2,7 +2,7 @@
   <UContainer class="flex flex-col justify-center items-center min-h-screen">
     <div class="flex gap-8 flex-col">
       <div class="text-center">
-        <CommonBrandText label="gdsc hanu" />
+        <CommonBrandText prefix="<" label="gdsc hanu" suffix="/>" />
         <h1 class="md:text-8xl text-3xl text-black font-bold text-center">
           your future
         </h1>
