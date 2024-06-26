@@ -20,31 +20,20 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-  team: {
-    type: String,
-    required: true,
-  },
+import type { MemberBadge } from '~/types/members/badge';
+
+const props = defineProps<MemberBadge>()
+
+const teamColors = [
+  { team: 'Alumni', color: 'white' },
+  { team: 'Technical', color: 'red' },
+  { team: 'Marketing', color: 'yellow' },
+  { team: 'Event', color: 'green' },
+  { team: 'Human Resources', color: 'blue' }
+]
+
+const color = computed(() => {
+  const foundTeam = teamColors.find(item => item.team === props.team)
+  return foundTeam ? foundTeam.color : ''
 })
-
-const color = ref('')
-
-const getColor = () => {
-  switch (props.team) {
-    case 'Alumni':
-      return 'white'
-    case 'Technical':
-      return 'red'
-    case 'Marketing':
-      return 'yellow'
-    case 'Event':
-      return 'green'
-    case 'Human Resources':
-      return 'blue'
-    default:
-      return ''
-  }
-}
-
-onMounted(() => (color.value = getColor()))
 </script>
