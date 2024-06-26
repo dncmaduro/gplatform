@@ -15,5 +15,66 @@
       </div>
     </div>
     <MembersSearch class="mt-8 w-full" />
+    <div
+      class="w-full grid min-[1180px]:grid-cols-4 min-[920px]:grid-cols-3 grid-cols-2"
+    >
+      <MembersCard
+        v-for="member in members"
+        :key="member.name"
+        :name="member.name"
+        :image-link="member.imageLink"
+        :position="member.position"
+        :team="member.team"
+      />
+    </div>
   </UContainer>
 </template>
+
+<script setup lang="ts">
+import type { MemberCard } from '~/types/members/card'
+
+const members = ref<MemberCard[]>([
+  {
+    name: 'Pham Tien Viet',
+    imageLink: '/membercard-example.png',
+    position: 'Co-founder & President',
+    team: 'Board of Leader',
+  },
+  {
+    name: 'Pham Tien Viet',
+    imageLink: '/membercard-example.png',
+    position: 'Co-founder & President',
+    team: 'Board of Advisor',
+  },
+  {
+    name: 'Pham Tien Viet',
+    imageLink: '/membercard-example.png',
+    position: 'Co-founder & President',
+    team: 'Technical',
+  },
+  {
+    name: 'Pham Tien Viet',
+    imageLink: '/membercard-example.png',
+    position: 'Co-founder & President',
+    team: 'Marketing',
+  },
+  {
+    name: 'Pham Tien Viet',
+    imageLink: '/membercard-example.png',
+    position: 'Co-founder & President',
+    team: 'Event',
+  },
+  {
+    name: 'Pham Tien Viet',
+    imageLink: '/membercard-example.png',
+    position: 'Co-founder & President',
+    team: 'Human Resources',
+  },
+  {
+    name: 'Pham Tien Viet',
+    imageLink: '/membercard-example.png',
+    position: 'Co-founder & President',
+    team: 'Alumni',
+  },
+])
+</script>
