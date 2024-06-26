@@ -12,7 +12,7 @@
         <span class="text-sm sm:text-lg">{{ name }}</span>
         <span class="text-[0.5rem] sm:text-xs">{{ position }}</span>
       </div>
-      <MembersBadge :team="team" />
+      <MembersBadge :team="badge.team" />
     </div>
   </div>
 </template>

@@ -24,7 +24,7 @@
         :name="member.name"
         :image-link="member.imageLink"
         :position="member.position"
-        :team="member.team"
+        :badge="member.badge"
       />
     </div>
   </UContainer>
@@ -38,43 +38,57 @@ const members = ref<MemberCard[]>([
     name: 'Pham Tien Viet',
     imageLink: '/membercard-example.png',
     position: 'Co-founder & President',
-    team: 'Board of Leader',
+    badge: {
+      team: 'Board of Leader',
+    }
   },
   {
     name: 'Pham Tien Viet',
     imageLink: '/membercard-example.png',
     position: 'Co-founder & President',
-    team: 'Board of Advisor',
+    badge: {
+      team: 'Board of Advisor',
+    }
   },
   {
     name: 'Pham Tien Viet',
     imageLink: '/membercard-example.png',
     position: 'Co-founder & President',
-    team: 'Technical',
+    badge: {
+      team: 'Technical',
+    }
   },
   {
     name: 'Pham Tien Viet',
     imageLink: '/membercard-example.png',
     position: 'Co-founder & President',
-    team: 'Marketing',
+    badge: {
+      team: 'Marketing',
+    }
   },
   {
     name: 'Pham Tien Viet',
     imageLink: '/membercard-example.png',
     position: 'Co-founder & President',
-    team: 'Event',
+    badge: {
+      team: 'Event',
+    }
   },
   {
     name: 'Pham Tien Viet',
     imageLink: '/membercard-example.png',
     position: 'Co-founder & President',
-    team: 'Human Resources',
+    badge: {
+      team: 'Human Resources',
+    }
   },
   {
     name: 'Pham Tien Viet',
     imageLink: '/membercard-example.png',
     position: 'Co-founder & President',
-    team: 'Alumni',
+    badge: {
+      team: 'Alumni',
+    }
   },
 ])
 </script>
