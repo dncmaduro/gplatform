@@ -29,7 +29,7 @@
           </div>
           <div class="mt-16 flex flex-col gap-2 lg:mt-0">
             <span class="text-xl">Step 0{{ step.stepNumber }}.</span>
-            <span class="flex flex-row lg:justify-start justify-center items-center text-3xl leading-8">
+            <span class="flex flex-row lg:justify-start justify-center items-center sm:text-3xl text-2xl leading-8">
               <CommonBrandText
                 prefix="<"
                 :label="step.title.prefix"
@@ -38,7 +38,7 @@
               ></CommonBrandText>
               <span>{{ step.title.word }}</span>
             </span>
-            <span class="leading-6">{{ step.content }}</span>
+            <span class="leading-6 sm:text-base text-sm ">{{ step.content }}</span>
           </div>
         </div>
       </div>
