@@ -56,8 +56,7 @@
         v-if="searchQueryList.length > 6"
         label="See more"
         icon="i-heroicons-arrow-small-right-solid"
-        color="transparent"
-        class="cursor-pointer rounded-full border border-2 border-solid border-gray-300 text-black transition duration-300 ease-in-out hover:bg-blue-50"
+        class="cursor-pointer rounded-full border-2 border-solid border-gray-300 text-black transition duration-300 ease-in-out hover:bg-blue-50"
       ></UButton>
     </UContainer>
     <UContainer v-else class="mb-10 text-center">
@@ -65,7 +64,7 @@
       <UButton
         label="Browse all jobs"
         icon="i-heroicons-arrow-small-right-solid"
-        trailing="false"
+        :trailing="false"
         class="cursor-pointer rounded-full px-4 py-2 text-white"
       ></UButton>
     </UContainer>

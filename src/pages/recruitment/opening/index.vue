@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="flex flex-col gap-8 md:gap-16">
     <CommonBreadcumb :links="beadcumbLinks" />
     <UContainer class="flex flex-1 flex-col items-center">
       <div class="flex flex-col gap-8 text-center">
