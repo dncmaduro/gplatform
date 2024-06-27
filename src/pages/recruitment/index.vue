@@ -1,5 +1,6 @@
 <template>
   <Recruitment />
+  <RecruitmentHiringProcess/>
   <RecruitmentFaq/>
   <RecruitmentTestimonials/>
 </template>

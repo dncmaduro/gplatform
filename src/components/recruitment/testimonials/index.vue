@@ -3,14 +3,14 @@
     <UContainer
       class="flex flex-row flex-wrap justify-center items-center font-bold"
     >
-      <span class="md:text-6xl text-2xl">Why</span>
+      <span class="sm:text-6xl text-2xl">Why</span>
       <CommonBrandText
         prefix="<"
         label="choose"
         suffix="/>"
-        class="md:text-6xl text-2xl"
+        class="sm:text-6xl text-2xl"
       ></CommonBrandText>
-      <span class="md:text-6xl text-2xl">GDSC HANU</span>
+      <span class="sm:text-6xl text-2xl">GDSC HANU</span>
     </UContainer>
     <UContainer
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-10"
