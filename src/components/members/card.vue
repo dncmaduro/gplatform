@@ -1,15 +1,15 @@
 <template>
-  <div class="w-full mt-8">
+  <div class="mt-8 w-full">
     <div
-      class="w-[148px] sm:w-[264px] h-[220px] sm:h-[380px] mx-auto rounded-lg border flex flex-col justify-between items-center gap-2 sm:gap-3"
+      class="mx-auto flex h-[220px] w-[148px] flex-col items-center justify-between gap-2 rounded-lg border hover:border-blue-400 sm:h-[380px] sm:w-[264px] sm:gap-3"
     >
       <img
         :src="imageLink"
         :alt="name"
-        class="w-[100px] sm:w-[200px] rounded-full mt-4 sm:mt-8"
+        class="mt-4 w-[100px] rounded-full border border-gray-50 sm:mt-8 sm:w-[200px]"
       />
-      <div class="flex flex-col justify-between text-center gap-2 mt-2">
-        <span class="text-sm sm:text-lg">{{ name }}</span>
+      <div class="mt-2 flex flex-col justify-between gap-2 text-center">
+        <span class="hover:blue-400 text-sm sm:text-lg">{{ name }}</span>
         <span class="text-[0.5rem] sm:text-xs">{{ position }}</span>
       </div>
       <MembersBadge :team="badge.team" />
@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import type { MemberCard } from '~/types/members/card'
+import type { MemberCard } from '~/types/members/card';
 
-defineProps<MemberCard>()
+defineProps<MemberCard>();
 </script>
