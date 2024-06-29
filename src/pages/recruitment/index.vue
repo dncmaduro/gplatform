@@ -1,6 +1,7 @@
 <template>
   <div>
   <Recruitment />
+  <RecruitmentOpeningJob/>
   <RecruitmentHiringProcess/>
   <RecruitmentJobNavigationTitle/>
   <RecruitmentFaq/>

@@ -17,7 +17,7 @@
     <UContainer class="grid-col-1 my-10 grid gap-y-3">
       <div v-for="(question, index) in faqList" :key="question.faqId">
         <UCard
-          class="cursor-pointer"
+          class="cursor-pointer hover:bg-blue-50 cursor-pointer transition duration-300 ease-in-out"
           :class="status[index] ? 'border-primary border-2 border-solid bg-blue-50' : ''"
           @click="() => handleStatus(index)"
         >

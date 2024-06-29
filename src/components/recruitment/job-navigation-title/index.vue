@@ -18,8 +18,8 @@
       <div class="basis-1/2">
         <div v-for="(job, index) in jobNavigationList" :key="job.jobId">
           <UCard
-            class="mb-4 rounded-full px-4 py-2 lg:py-3 xl:py-4 cursor-pointer"
-            :class="clickState[index] ? 'border-primary border-2 border-solid bg-blue-50' : ''"
+            class="mb-4 rounded-full px-4 py-2 lg:py-3 xl:py-4 hover:bg-blue-50 cursor-pointer transition duration-300 ease-in-out cursor-pointer"
+            :class="{'border-primary border-2 border-solid bg-blue-50' : clickState[index]}"
             :ui="{ strategy: 'override', body: '' }"
             @click="() => handleStatus(index)"
           >
