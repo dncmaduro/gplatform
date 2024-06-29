@@ -14,18 +14,23 @@
         <span class="text-2xl font-bold sm:text-6xl"> of your student life</span>
       </div>
     </UContainer>
-    <UContainer class="md:flex md:flex-row md:items-center md:justify-between md:gap-16">
+    <UContainer class="my-10 md:flex md:flex-row md:items-center md:justify-between md:gap-16">
       <div class="basis-1/2">
-        <div v-for="job in jobNavigationList" :key="job.jobId">
-          <UCard class="mb-4 px-3 py-2 lg:py-3 xl:py-4 rounded-full" :ui="{ strategy: 'override', body: '' }">
+        <div v-for="(job, index) in jobNavigationList" :key="job.jobId">
+          <UCard
+            class="mb-4 rounded-full px-4 py-2 lg:py-3 xl:py-4 cursor-pointer"
+            :class="clickState[index] ? 'border-primary border-2 border-solid bg-blue-50' : ''"
+            :ui="{ strategy: 'override', body: '' }"
+            @click="() => handleStatus(index)"
+          >
             <div class="flex flex-row items-center justify-between">
-              <div class="flex flex-row gap-1 items-center">
-                <span class="sm:text-base text-sm">{{ job.jobName }}</span>
+              <div class="flex flex-row items-center gap-1">
+                <span class="text-sm sm:text-base">{{ job.jobName }}</span>
                 <CommonBrandText
                   prefix="<"
                   :label="job.posNumber"
                   suffix="/>"
-                  class="text-primary text-medium text-base font-bold"
+                  class="text-primary text-medium sm:text-base text-sm font-bold"
                 ></CommonBrandText>
               </div>
               <UIcon name="i-heroicons-arrow-up-right-solid" class="w-15 h-15"></UIcon>
@@ -33,12 +38,10 @@
           </UCard>
         </div>
       </div>
-      <div class="relative my-8 w-full h-full basis-3/5 md:my-0 xl:basis-1/2">
+      <div class="relative my-8 h-full w-full basis-3/5 md:my-0 xl:basis-1/2">
         <NuxtImg src="/gdsc.png" alt="gdsc" class="h-full w-full" />
-        <div class="absolute lg:top-[60%] top-1/2 lg:px-8 px-4 flex flex-col sm:gap-3 gap-2">
-          <span class="lg:text-3xl md:text-2xl sm:text-3xl text-base font-bold text-red  text-white text-center"
-            >Are you a first year student or have no experience?</span
-          >
+        <div class="absolute top-1/2 flex flex-col gap-2 px-4 sm:gap-3 lg:top-[60%] lg:px-8">
+          <span class="text-center text-base font-bold text-white sm:text-3xl md:text-2xl lg:text-3xl">Are you a first year student or have no experience?</span>
           <UButton
             label="Visit G<Technical/>Trainee Page"
             icon="i-heroicons-arrow-right-solid"
@@ -55,6 +58,7 @@
 </template>
 <script setup lang="ts">
 import type { JobTitle } from '~/types/recruitment/job-title';
+const router = useRouter();
 const jobNavigationList = ref<JobTitle[]>([
   {
     jobId: 1,
@@ -87,4 +91,10 @@ const jobNavigationList = ref<JobTitle[]>([
     posNumber: '6 positions',
   },
 ]);
+const clickState = ref<boolean[]>([]);
+
+const handleStatus = (index: number) => {
+  clickState.value[index] = !clickState.value[index];
+  router.push(`/recruitment/${jobNavigationList.value[index].jobId}`);
+};
 </script>
