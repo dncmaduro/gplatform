@@ -18,7 +18,7 @@
       <div v-for="(question, index) in faqList" :key="question.faqId">
         <UCard
           class="cursor-pointer hover:bg-blue-50 cursor-pointer transition duration-300 ease-in-out"
-          :class="status[index] ? 'border-primary border-2 border-solid bg-blue-50' : ''"
+          :class="{'border-primary border-2 border-solid bg-blue-50' : status[index]}"
           @click="() => handleStatus(index)"
         >
           <div class="text-primary flex flex-row items-center justify-between font-bold">
