@@ -9,11 +9,11 @@
         ></CommonBrandText>
       </div>
     </UContainer>
-    <UContainer class="my-10 flex flex-row items-center flex-wrap justify-center gap-4">
+    <UContainer class="my-10 flex flex-row flex-wrap items-center justify-center gap-4">
       <div v-for="(category, index) in categories" :key="category.id">
         <UCard
           :ui="{ strategy: 'override', body: '' }"
-          class="cursor-pointer rounded-full sm:px-3 sm:py-2 p-1"
+          class="cursor-pointer rounded-full p-1 sm:px-3 sm:py-2"
           :class="
             clickState[index]
               ? 'bg-primary text-white'
@@ -21,11 +21,14 @@
           "
           @click="() => handleStatus(index)"
         >
-          <p class="sm:text-sm text-xs text-center">{{ category.content }}</p>
+          <p class="text-center text-xs sm:text-sm">{{ category.content }}</p>
         </UCard>
       </div>
     </UContainer>
-    <UContainer class="my-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <UContainer
+      v-if="searchQueryList.length"
+      class="my-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+    >
       <div v-for="searchQuery in searchQueryList" :key="searchQuery.id">
         <RecruitmentJobItem
           :id="searchQuery.id"
@@ -36,7 +39,24 @@
         ></RecruitmentJobItem>
       </div>
     </UContainer>
-    <UContainer class="text-center mb-10"><UButton label="See more" icon="i-heroicons-arrow-small-right-solid" color="transparent" class="rounded-full border border-2 border-solid border-gray-300 text-black transition duration-300 ease-in-out hover:bg-blue-50 cursor-pointer"></UButton></UContainer>
+    <UContainer v-if="searchQueryList.length" class="mb-10 text-center">
+      <UButton
+        label="See more"
+        icon="i-heroicons-arrow-small-right-solid"
+        color="transparent"
+        class="cursor-pointer rounded-full border border-2 border-solid border-gray-300 text-black transition duration-300 ease-in-out hover:bg-blue-50"
+        v-if="searchQueryList.length > 6"
+      ></UButton>
+    </UContainer>
+    <UContainer v-else class="text-center mb-10">
+      <p class="text-2xl font-bold text-gray-600 mb-10">More job openings are coming soon!</p>
+      <UButton
+        label="Browse all jobs"
+        icon="i-heroicons-arrow-small-right-solid"
+        trailing="false"
+        class="cursor-pointer rounded-full text-white py-2 px-4"
+      ></UButton>
+    </UContainer>
   </div>
 </template>
 
