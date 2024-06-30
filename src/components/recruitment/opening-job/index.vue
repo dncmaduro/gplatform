@@ -14,12 +14,12 @@
         <UCard
           :ui="{ strategy: 'override', body: '' }"
           class="cursor-pointer rounded-full sm:px-3 sm:py-2 p-1"
-          @click="() => handleStatus(index)"
           :class="
             clickState[index]
               ? 'bg-primary text-white'
               : 'transition duration-300 ease-in-out hover:bg-blue-50'
           "
+          @click="() => handleStatus(index)"
         >
           <p class="sm:text-sm text-xs text-center">{{ category.content }}</p>
         </UCard>
