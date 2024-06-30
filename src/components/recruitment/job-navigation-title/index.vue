@@ -3,15 +3,13 @@
     <UContainer class="mb-10 text-center">
       <div class="leading-10">
         <div class="flex flex-col justify-center lg:flex-row">
-          <span class="text-2xl font-bold sm:text-6xl">The most</span>
           <CommonBrandText
-            prefix="<"
+            prefix="The most"
             label="impactful work"
-            suffix="/>"
-            class="text-primary text-2xl font-bold sm:text-6xl"
+            suffix="of your student life"
+            class="text-2xl font-bold sm:text-6xl"
           ></CommonBrandText>
         </div>
-        <span class="text-2xl font-bold sm:text-6xl"> of your student life</span>
       </div>
     </UContainer>
     <UContainer class="my-10 md:flex md:flex-row md:items-center md:justify-between md:gap-16">
@@ -27,9 +25,7 @@
               <div class="flex flex-row items-center gap-1">
                 <span class="text-sm sm:text-base">{{ job.jobName }}</span>
                 <CommonBrandText
-                  prefix="<"
                   :label="job.posNumber"
-                  suffix="/>"
                   class="text-primary text-medium sm:text-base text-sm font-bold"
                 ></CommonBrandText>
               </div>
@@ -94,7 +90,9 @@ const jobNavigationList = ref<JobTitle[]>([
 const clickState = ref<boolean[]>([]);
 
 const handleStatus = (index: number) => {
-  clickState.value[index] = !clickState.value[index];
+  clickState.value = clickState.value.map((state: boolean, i: number) =>
+    i === index ? true : false,
+  );
   router.push(`/recruitment/${jobNavigationList.value[index].jobId}`);
 };
 </script>

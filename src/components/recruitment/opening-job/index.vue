@@ -3,19 +3,17 @@
     <UContainer class="text-center">
       <div class="flex flex-row items-center justify-center leading-10">
         <CommonBrandText
-          prefix="<"
-          label="Opening"
-          suffix="/>"
-          class="text-primary text-2xl font-bold sm:text-6xl"
+          label="Spotlight"
+          suffix="position"
+          class="text-2xl font-bold sm:text-6xl"
         ></CommonBrandText>
-        <span class="text-2xl font-bold sm:text-6xl">position</span>
       </div>
     </UContainer>
-    <UContainer class="my-10 flex flex-row items-center justify-center gap-4">
+    <UContainer class="my-10 flex flex-row items-center flex-wrap justify-center gap-4">
       <div v-for="(category, index) in categories" :key="category.id">
         <UCard
           :ui="{ strategy: 'override', body: '' }"
-          class="cursor-pointer rounded-full p-4"
+          class="cursor-pointer rounded-full sm:px-3 sm:py-2 p-1"
           @click="() => handleStatus(index)"
           :class="
             clickState[index]
@@ -23,7 +21,7 @@
               : 'transition duration-300 ease-in-out hover:bg-blue-50'
           "
         >
-          <span>{{ category.content }}</span>
+          <p class="sm:text-sm text-xs text-center">{{ category.content }}</p>
         </UCard>
       </div>
     </UContainer>

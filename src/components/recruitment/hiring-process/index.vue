@@ -2,12 +2,10 @@
   <div>
     <UContainer class="text-center">
       <div class="leading-10">
-        <span class="text-2xl font-bold sm:text-6xl">Take a look inside</span>
         <CommonBrandText
-          prefix="<"
+          prefix="Take a look inside"
           label="hiring process"
-          suffix="/>"
-          class="text-primary text-2xl font-bold sm:text-6xl"
+          class="text-2xl font-bold sm:text-6xl"
         ></CommonBrandText>
       </div>
       <div class="my-10 text-center">
@@ -31,12 +29,10 @@
             <span class="text-xl">Step 0{{ step.stepNumber }}.</span>
             <span class="flex flex-row lg:justify-start justify-center items-center sm:text-3xl text-2xl leading-8">
               <CommonBrandText
-                prefix="<"
                 :label="step.title.prefix"
-                suffix="/>"
-                class="text-primary font-bold"
+                :suffix="step.title.word"
+                class="font-bold"
               ></CommonBrandText>
-              <span>{{ step.title.word }}</span>
             </span>
             <span class="leading-6 sm:text-base text-sm ">{{ step.content }}</span>
           </div>
