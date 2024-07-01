@@ -13,20 +13,20 @@
       </div>
     </UContainer>
     <UContainer class="grid-col-1 my-10 grid gap-y-3">
-      <div v-for="(question, index) in faqList" :key="question.faqId">
+      <div v-for="(question, index) in faqList" :key="question.id">
         <UCard
           class="cursor-pointer hover:bg-blue-50 cursor-pointer transition duration-300 ease-in-out"
           :class="{'border-primary border-2 border-solid bg-blue-50' : status[index]}"
           @click="() => handleStatus(index)"
         >
           <div class="text-primary flex flex-row items-center justify-between font-bold">
-            <span>{{ question.title }}</span>
+            <p>{{ question.title }}</p>
             <UIcon
               :name="status[index] ? 'i-heroicons-chevron-up' : 'i-heroicons-chevron-down'"
             ></UIcon>
           </div>
           <div v-show="status[index]" class="mt-4">
-            <span>{{ question.content }}</span>
+            <p>{{ question.content }}</p>
           </div>
         </UCard>
       </div>
@@ -39,17 +39,17 @@ import type { Faq } from '~/types/recruitment/faq';
 
 const faqList = ref<Faq[]>([
   {
-    faqId: 1,
+    id: '1',
     title: 'Title',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
   },
   {
-    faqId: 2,
+    id: '2',
     title: 'Title',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
   },
   {
-    faqId: 3,
+    id: '3',
     title: 'Title',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
   },

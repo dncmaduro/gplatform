@@ -9,10 +9,10 @@
         ></CommonBrandText>
       </div>
       <div class="my-10 text-center">
-        <span
+        <p
           >Although it may differ slightly depending on the role and teams, the same basics apply
           whether you’re applying for a tech job or a marketing job, an collaborator or a leadership
-          position. Your process is likely to include the following stages.</span
+          position. Your process is likely to include the following stages.</p
         >
       </div>
     </UContainer>
@@ -26,15 +26,15 @@
             <NuxtImg :src="step.img" class="h-full w-full rounded-3xl object-contain"></NuxtImg>
           </div>
           <div class="mt-16 flex flex-col gap-2 lg:mt-0">
-            <span class="text-xl">Step 0{{ step.stepNumber }}.</span>
-            <span class="flex flex-row lg:justify-start justify-center items-center sm:text-3xl text-2xl leading-8">
+            <h2 class="text-xl">Step 0{{ step.stepNumber }}.</h2>
+            <div class="sm:text-3xl text-2xl leading-8">
               <CommonBrandText
                 :label="step.title.prefix"
                 :suffix="step.title.word"
                 class="font-bold"
               ></CommonBrandText>
-            </span>
-            <span class="leading-6 sm:text-base text-sm ">{{ step.content }}</span>
+            </div>
+            <p class="leading-6 sm:text-base text-sm ">{{ step.content }}</p>
           </div>
         </div>
       </div>

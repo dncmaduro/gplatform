@@ -1,5 +1,5 @@
 export type Faq = {
-  faqId: number,
+  id: string,
   title?: string,
   content?: string,
 }

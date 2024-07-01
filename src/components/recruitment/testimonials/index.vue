@@ -16,7 +16,7 @@
       <div v-for="testimonial in testimonials" :key="testimonial.testimonialId">
         <UCard class="flex flex-col">
           <div class="mb-5">
-            <span class="leading-6">{{ testimonial.comment }}</span>
+            <p class="leading-6">{{ testimonial.comment }}</p>
           </div>
           <div class="flex flex-row items-center gap-4">
             <UAvatar :src="testimonial.icon" size="md" alt="Avatar" />
