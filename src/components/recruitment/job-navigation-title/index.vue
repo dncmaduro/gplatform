@@ -36,6 +36,9 @@
       </div>
       <div class="relative my-8 h-full w-full basis-3/5 md:my-0 xl:basis-1/2">
         <NuxtImg src="/gdsc.png" alt="gdsc" class="h-full w-full" />
+        <div class="absolute h-full w-full top-0">
+          <NuxtImg src="/overlay.png" alt="overlay" class="h-full w-full"></NuxtImg>
+        </div>
         <div class="absolute top-1/2 flex flex-col gap-2 px-4 sm:gap-3 lg:top-[60%] lg:px-8">
           <h1 class="text-center text-base font-bold text-white sm:text-3xl md:text-2xl lg:text-3xl">Are you a first year student or have no experience?</h1>
           <UButton

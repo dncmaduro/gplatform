@@ -50,7 +50,7 @@ const hiringStepList = ref<HiringProcess[]>([
     img: '/hiring1.png',
     title: {
       prefix: 'Form',
-      word: 'application',
+      label: 'application',
     },
     content:
       'Although it may differ slightly depending on the role and teams, the same basics apply whether you’re applying for a tech job or a marketing job, an collaborator or a leadership position. Your process is likely to include the following stages.',
@@ -60,7 +60,7 @@ const hiringStepList = ref<HiringProcess[]>([
     img: '/hiring2.png',
     title: {
       prefix: 'Professional',
-      word: 'test',
+      label: 'test',
     },
     content:
       'Although it may differ slightly depending on the role and teams, the same basics apply whether you’re applying for a tech job or a marketing job, an collaborator or a leadership position. Your process is likely to include the following stages.',
@@ -70,7 +70,7 @@ const hiringStepList = ref<HiringProcess[]>([
     img: '/hiring3.png',
     title: {
       prefix: 'Personal',
-      word: 'Interview',
+      label: 'Interview',
     },
     content:
       'Although it may differ slightly depending on the role and teams, the same basics apply whether you’re applying for a tech job or a marketing job, an collaborator or a leadership position. Your process is likely to include the following stages.',
@@ -80,7 +80,7 @@ const hiringStepList = ref<HiringProcess[]>([
     img: '/hiring4.png',
     title: {
       prefix: 'Personal',
-      word: 'Interview',
+      label: 'Interview',
     },
     content:
       'Although it may differ slightly depending on the role and teams, the same basics apply whether you’re applying for a tech job or a marketing job, an collaborator or a leadership position. Your process is likely to include the following stages.',

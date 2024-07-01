@@ -3,7 +3,7 @@ stepNumber: number,
 img: string,
 title: {
     prefix: string,
-    word: string,
+    label: string,
 }
 content: string,
 }
