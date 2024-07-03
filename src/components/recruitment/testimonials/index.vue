@@ -3,14 +3,12 @@
     <UContainer
       class="flex flex-row flex-wrap justify-center items-center font-bold"
     >
-      <span class="md:text-6xl text-2xl">Why</span>
       <CommonBrandText
-        prefix="<"
+        prefix="Why"
         label="choose"
-        suffix="/>"
-        class="md:text-6xl text-2xl"
+        suffix="GDSC HANU"
+        class="sm:text-6xl text-2xl"
       ></CommonBrandText>
-      <span class="md:text-6xl text-2xl">GDSC HANU</span>
     </UContainer>
     <UContainer
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-10"
@@ -18,7 +16,7 @@
       <div v-for="testimonial in testimonials" :key="testimonial.testimonialId">
         <UCard class="flex flex-col">
           <div class="mb-5">
-            <span class="leading-6">{{ testimonial.comment }}</span>
+            <p class="leading-6">{{ testimonial.comment }}</p>
           </div>
           <div class="flex flex-row items-center gap-4">
             <UAvatar :src="testimonial.icon" size="md" alt="Avatar" />
