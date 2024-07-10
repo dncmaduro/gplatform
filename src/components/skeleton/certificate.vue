@@ -1,7 +1,10 @@
 <template>
-  <div class="flex h-[165px] w-[120px] flex-col items-center rounded-md border border-gray-300">
-    <USkeleton class="mt-4 h-[60px] w-[60px] rounded-full" />
-    <USkeleton class="mt-4 h-[14px] w-[80px] rounded-full" />
-    <USkeleton class="mt-6 h-[10px] w-[80px] rounded-full" />
-  </div>
+  <UCard class="w-[120px]">
+    <div class="flex flex-col items-center">
+      <USkeleton class="h-[60px] w-[60px] rounded-full" />
+      <USkeleton class="mt-3 h-3 w-[70px] rounded-full" />
+      <USkeleton class="mt-2 h-3 w-[88px] rounded-full px-4" />
+      <USkeleton class="mt-3 h-2 w-[88px] rounded-full px-4" />
+    </div>
+  </UCard>
 </template>
