@@ -11,7 +11,7 @@
 
     <hr class="w-full" />
 
-    Timeline Activities
+    <h2 class="font-bold">Timeline Activities</h2>
     <div class="flex w-full flex-col items-center gap-2">
       <USkeleton class="h-3 w-3/5 rounded-full" />
       <USkeleton class="h-3 w-4/5 rounded-full" />
