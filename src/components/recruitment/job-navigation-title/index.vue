@@ -1,13 +1,13 @@
 <template>
   <div>
     <UContainer class="mb-10 text-center">
-      <div class="leading-10">
+      <div>
         <div class="flex flex-col justify-center lg:flex-row">
           <CommonBrandText
             prefix="The most"
-            label="impactful work"
+            label="<impactful work/>"
             suffix="of your student life"
-            class="text-2xl font-bold sm:text-6xl"
+            class="text-2xl font-bold md:text-6xl"
           ></CommonBrandText>
         </div>
       </div>
@@ -34,12 +34,12 @@
           </UCard>
         </div>
       </div>
-      <div class="relative my-8 h-full w-full basis-3/5 md:my-0 xl:basis-1/2">
-        <NuxtImg src="/gdsc.png" alt="gdsc" class="h-full w-full" />
-        <div class="absolute h-full w-full top-0">
-          <NuxtImg src="/overlay.png" alt="overlay" class="h-full w-full"></NuxtImg>
+      <div class="relative my-8 w-full md:max-w-lg md:my-0 basis-3/5">
+        <NuxtImg src="/gdsc.png" alt="gdsc" class="w-full md:max-w-lg" />
+        <div class="absolute w-full md:max-w-lg top-0">
+          <NuxtImg src="/overlay.png" alt="overlay" class="w-full md:max-w-lg"></NuxtImg>
         </div>
-        <div class="absolute top-1/2 flex flex-col gap-2 px-4 sm:gap-3 lg:top-[60%] lg:px-8">
+        <div class="absolute top-1/2 flex flex-col gap-2 px-4 sm:gap-3 lg:top-3/5 lg:px-8">
           <h1 class="text-center text-base font-bold text-white sm:text-3xl md:text-2xl lg:text-3xl">Are you a first year student or have no experience?</h1>
           <UButton
             label="Visit G<Technical/>Trainee Page"
@@ -49,6 +49,7 @@
             color="transparent"
             variant="solid"
             trailing="true"
+            @click="$router.push('/recruitment/trainee')"
           ></UButton>
         </div>
       </div>

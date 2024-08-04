@@ -1,3 +1,12 @@
 <template>
-  <UContainer class="h-[200px]"> Main page </UContainer>
+  <div>
+    <HomepageAboveTheFold />
+    <HomepageWelcome/>
+    <HomepageCoreValue />
+    <HomepageProject />
+    <HomepageMemIntro />
+    <HomepageTechIntro />
+    <RecruitmentJobNavigationTitle/>
+    <RecruitmentTestimonials />
+  </div>
 </template>

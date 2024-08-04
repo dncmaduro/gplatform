@@ -1,35 +1,44 @@
 <template>
   <div>
-    <UContainer class="flex flex-row flex-wrap items-center justify-center font-bold">
+    <UContainer class="flex flex-row flex-wrap items-center justify-center text-center font-bold">
       <CommonBrandText
         prefix="Why"
-        label="choose"
+        label="<choose/>"
         suffix="GDSC HANU"
-        class="text-2xl sm:text-6xl"
+        class="text-2xl md:text-6xl"
       ></CommonBrandText>
     </UContainer>
-    <UContainer class="my-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-      <div v-for="testimonial in testimonials" :key="testimonial.testimonialId">
-        <UCard class="flex flex-col">
-          <div class="mb-5">
-            <p class="leading-6">{{ testimonial.comment }}</p>
-          </div>
-          <div class="flex flex-row items-center gap-4">
-            <UAvatar :src="testimonial.icon" size="md" alt="Avatar" />
-            <div class="flex flex-col">
-              <p class="text-xl font-bold">{{ testimonial.userName }}</p>
-              <p class="text-xs">{{ testimonial.userRole }}</p>
+    <template v-if="pending">
+      <UContainer class="my-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div v-for="testimonial in testimonials" :key="testimonial.testimonialId">
+          <SkeletonTestimonial></SkeletonTestimonial>
+        </div>
+      </UContainer>
+    </template>
+    <template v-else>
+      <UContainer class="my-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div v-for="testimonial in testimonials" :key="testimonial.testimonialId">
+          <UCard class="flex flex-col">
+            <div class="mb-5">
+              <p class="leading-6">{{ testimonial.comment }}</p>
             </div>
-          </div>
-        </UCard>
-      </div>
-    </UContainer>
+            <div class="flex flex-row items-center gap-4">
+              <UAvatar :src="testimonial.icon" size="md" alt="Avatar" />
+              <div class="flex flex-col">
+                <p class="text-xl font-bold">{{ testimonial.userName }}</p>
+                <p class="text-xs">{{ testimonial.userRole }}</p>
+              </div>
+            </div>
+          </UCard>
+        </div>
+      </UContainer>
+    </template>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { Testimonial } from '~/types/recruitment/testimonial';
-
+const pending = ref(true);
 const testimonials = ref<Testimonial[]>([
   {
     testimonialId: 1,
@@ -80,4 +89,8 @@ const testimonials = ref<Testimonial[]>([
     userRole: 'Co founder & President',
   },
 ]);
+
+setTimeout(() => {
+  pending.value = false;
+}, 2000);
 </script>

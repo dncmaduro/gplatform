@@ -28,6 +28,8 @@
     "prettier-plugin-tailwindcss": "^0.6.5"
   },
   "dependencies": {
+    "@iconify-json/logos": "^1.1.43",
+    "@iconify-json/simple-icons": "^1.1.111",
     "@pinia/nuxt": "^0.5.1",
     "@types/node": "^20.14.8",
     "pinia": "^2.1.7",

@@ -5,7 +5,7 @@
         <CommonBrandText
           prefix="Take a look inside"
           label="hiring process"
-          class="text-2xl font-bold sm:text-6xl"
+          class="text-2xl font-bold md:text-6xl"
         ></CommonBrandText>
       </div>
       <div class="my-10 text-center">
@@ -30,7 +30,7 @@
             <div class="sm:text-3xl text-2xl leading-8">
               <CommonBrandText
                 :label="step.title.prefix"
-                :suffix="step.title.word"
+                :suffix="step.title.label"
                 class="font-bold"
               ></CommonBrandText>
             </div>
