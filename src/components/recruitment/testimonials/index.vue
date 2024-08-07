@@ -8,7 +8,7 @@
         class="text-2xl md:text-6xl"
       ></CommonBrandText>
     </UContainer>
-    <template v-if="pending">
+    <template v-if="isPending">
       <UContainer class="my-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         <div v-for="testimonial in testimonials" :key="testimonial.testimonialId">
           <SkeletonTestimonial></SkeletonTestimonial>
@@ -38,7 +38,7 @@
 
 <script setup lang="ts">
 import type { Testimonial } from '~/types/recruitment/testimonial';
-const pending = ref(true);
+const isPending = ref(true);
 const testimonials = ref<Testimonial[]>([
   {
     testimonialId: 1,
@@ -91,6 +91,6 @@ const testimonials = ref<Testimonial[]>([
 ]);
 
 setTimeout(() => {
-  pending.value = false;
+  isPending.value = false;
 }, 2000);
 </script>

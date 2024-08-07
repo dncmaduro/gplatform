@@ -43,11 +43,11 @@
     </template>
     <UContainer v-if="searchQueryList.length" class="mb-10 text-center">
       <UButton
+        v-if="searchQueryList.length > 6"
         label="See more"
         icon="i-heroicons-arrow-small-right-solid"
         color="transparent"
         class="cursor-pointer rounded-full border border-2 border-solid border-gray-300 text-black transition duration-300 ease-in-out hover:bg-blue-50"
-        v-if="searchQueryList.length > 6"
       ></UButton>
     </UContainer>
     <UContainer v-else class="mb-10 text-center">
@@ -63,15 +63,8 @@
 </template>
 
 <script setup lang="ts">
-import type { DescriptionItem, JobItem } from '~/types/recruitment/job';
+import type { JobItem } from '~/types/recruitment/job';
 const loading = ref(true);
-const categories = ref<DescriptionItem[]>([
-  { id: '1', content: 'Board of Leader' },
-  { id: '2', content: 'Technical Department' },
-  { id: '3', content: 'Marketing Department' },
-  { id: '4', content: 'Event Department' },
-  { id: '5', content: 'Human Resources Department' },
-]);
 const searchQueryList = ref<JobItem[]>([
   {
     id: '1',
@@ -116,14 +109,6 @@ const searchQueryList = ref<JobItem[]>([
     description: 'Develop the products and tools of the future for billions of users.',
   },
 ]);
-
-const clickState = ref<boolean[]>(new Array(categories.value.length).fill(false));
-
-const handleStatus = (index: number) => {
-  clickState.value = clickState.value.map((state: boolean, i: number) =>
-    i === index ? true : false,
-  );
-};
 
 setTimeout(() => {
   loading.value = false;

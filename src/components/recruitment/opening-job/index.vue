@@ -25,7 +25,7 @@
         </UCard>
       </div>
     </UContainer>
-    <template v-if="pending">
+    <template v-if="isPending">
       <UContainer
         v-if="searchQueryList.length"
         class="my-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
@@ -53,11 +53,11 @@
     </template>
     <UContainer v-if="searchQueryList.length" class="mb-10 text-center">
       <UButton
+        v-if="searchQueryList.length > 6"
         label="See more"
         icon="i-heroicons-arrow-small-right-solid"
         color="transparent"
         class="cursor-pointer rounded-full border border-2 border-solid border-gray-300 text-black transition duration-300 ease-in-out hover:bg-blue-50"
-        v-if="searchQueryList.length > 6"
       ></UButton>
     </UContainer>
     <UContainer v-else class="mb-10 text-center">
@@ -74,7 +74,7 @@
 
 <script setup lang="ts">
 import type { DescriptionItem, JobItem } from '~/types/recruitment/job';
-const pending = ref(true);
+const isPending = ref(true);
 const categories = ref<DescriptionItem[]>([
   { id: '1', content: 'Board of Leader' },
   { id: '2', content: 'Technical Department' },
@@ -135,7 +135,6 @@ const handleStatus = (index: number) => {
 };
 
 setTimeout(() => {
-  pending.value = false;
+  isPending.value = false;
 }, 2000);
-
 </script>

@@ -10,9 +10,9 @@
             :src="member.memberImage"
             :alt="member.memberImage"
             class="absolute inset-0 h-full w-full"
+            loading="lazy"
             @mouseover="() => handleBadge(index)"
             @mouseleave="() => handleBadge(index)"
-            loading="lazy"
           ></NuxtImg>
           <UBadge
             :label="member.name"

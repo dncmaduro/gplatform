@@ -1,7 +1,7 @@
 <template>
   <UContainer
     class="my-16 flex lg:flex-row flex-col-reverse lg:justify-between justify-center items-center gap-8"
-    :ui="{ constrained: ' max-w-7xl lg:max-w-full max-w-3xl' }"
+    :ui="{ constrained: 'max-w-7xl lg:max-w-full max-w-3xl' }"
   >
     <div class="flex flex-col lg:justify-between justify-center gap-8 lg:basis-3/5">
       <CommonBrandText
