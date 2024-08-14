@@ -3,29 +3,19 @@
     <UContainer class="text-center">
       <div class="flex flex-row items-center justify-center leading-10">
         <CommonBrandText
-          label="Spotlight"
-          suffix="position"
+          label="G<Technical/>"
+          suffix="Trainee"
           class="text-2xl font-bold md:text-6xl"
         ></CommonBrandText>
       </div>
     </UContainer>
-    <UContainer class="my-10 flex flex-row flex-wrap items-center justify-center gap-4">
-      <div v-for="(category, index) in categories" :key="category.id">
-        <UCard
-          :ui="{ strategy: 'override', body: '' }"
-          class="cursor-pointer rounded-full p-1 sm:px-3 sm:py-2"
-          :class="
-            clickState[index]
-              ? 'bg-primary text-white'
-              : 'transition duration-300 ease-in-out hover:bg-blue-50'
-          "
-          @click="() => handleStatus(index)"
-        >
-          <p class="text-center text-xs sm:text-sm">{{ category.content }}</p>
-        </UCard>
-      </div>
+    <UContainer class="py-4 text-center text-xs sm:text-base md:py-8">
+      <h1>
+        Join us today and keep maximizing your potential thanks to working with the best talents, in
+        sizable projects that impact on Tech Community.
+      </h1>
     </UContainer>
-    <template v-if="isPending">
+    <template v-if="loading">
       <UContainer
         v-if="searchQueryList.length"
         class="my-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
@@ -73,15 +63,8 @@
 </template>
 
 <script setup lang="ts">
-import type { DescriptionItem, JobItem } from '~/types/recruitment/job';
-const isPending = ref(true);
-const categories = ref<DescriptionItem[]>([
-  { id: '1', content: 'Board of Leader' },
-  { id: '2', content: 'Technical Department' },
-  { id: '3', content: 'Marketing Department' },
-  { id: '4', content: 'Event Department' },
-  { id: '5', content: 'Human Resources Department' },
-]);
+import type { JobItem } from '~/types/recruitment/job';
+const loading = ref(true);
 const searchQueryList = ref<JobItem[]>([
   {
     id: '1',
@@ -126,15 +109,8 @@ const searchQueryList = ref<JobItem[]>([
     description: 'Develop the products and tools of the future for billions of users.',
   },
 ]);
-const clickState = ref<boolean[]>(new Array(categories.value.length).fill(false));
-
-const handleStatus = (index: number) => {
-  clickState.value = clickState.value.map((state: boolean, i: number) =>
-    i === index ? true : false,
-  );
-};
 
 setTimeout(() => {
-  isPending.value = false;
+  loading.value = false;
 }, 2000);
 </script>

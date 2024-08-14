@@ -17,6 +17,9 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'light',
   },
+  ui: {
+    icons: ['logos', 'simple-icons'],
+  },
   devtools: { enabled: true },
   srcDir: 'src',
   css: ['~/assets/css/global.css', '~/assets/css/variables.css'],
