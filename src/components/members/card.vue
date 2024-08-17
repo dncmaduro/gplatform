@@ -1,7 +1,7 @@
 <template>
   <div class="mt-8 w-full">
     <div
-      class="mx-auto flex h-[220px] w-[148px] flex-col items-center justify-between gap-2 rounded-lg border hover:border-blue-400 sm:h-[380px] sm:w-[264px] sm:gap-3"
+      class="mx-auto flex h-[220px] w-[148px] cursor-pointer flex-col items-center justify-between gap-2 rounded-lg border hover:border-blue-400 hover:bg-blue-50 sm:h-[380px] sm:w-[264px] sm:gap-3"
     >
       <img
         :src="imageLink"
