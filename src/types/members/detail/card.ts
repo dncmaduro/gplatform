@@ -3,16 +3,14 @@ export type MemberDetailCard = {
   imageLink: string;
   position: string;
   team: string;
-  activities: [
-    {
-      duration: string;
-      position: string;
-    },
-  ];
+  activities: {
+    duration: string;
+    position: string;
+  }[];
   socials: {
-    linkedin?: string;
-    github?: string;
-    email?: string;
-    instagram?: string;
+    linkedin: string;
+    github: string;
+    email: string;
+    instagram: string;
   };
 };

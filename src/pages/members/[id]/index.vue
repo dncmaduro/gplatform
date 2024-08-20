@@ -1,12 +1,11 @@
 <template>
   <UContainer>
-    hello
     <MembersDetailCard
       name="Pham Tien Viet"
       image-link="/membercard-example.png"
       position="Co-founded & President"
       team="Board of Leader"
-      :activites="activities"
+      :activities="activities"
       :socials="socials"
     />
   </UContainer>
