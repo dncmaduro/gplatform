@@ -5,7 +5,7 @@
         <div class="flex flex-col justify-center lg:flex-row">
           <CommonBrandText
             prefix="The most"
-            label="<impactful work/>"
+            label="impactful work"
             suffix="of your student life"
             class="text-2xl font-bold md:text-6xl"
           ></CommonBrandText>
@@ -16,8 +16,8 @@
       <div class="basis-1/2">
         <div v-for="(job, index) in jobNavigationList" :key="job.jobId">
           <UCard
-            class="mb-4 rounded-full px-4 py-2 lg:py-3 xl:py-4 hover:bg-blue-50 cursor-pointer transition duration-300 ease-in-out cursor-pointer"
-            :class="{'border-primary border-2 border-solid bg-blue-50' : clickState[index]}"
+            class="mb-4 cursor-pointer rounded-full px-4 py-2 transition duration-300 ease-in-out hover:bg-blue-50 lg:py-3 xl:py-4"
+            :class="{ 'border-primary border-2 border-solid bg-blue-50': clickState[index] }"
             :ui="{ strategy: 'override', body: '' }"
             @click="() => handleStatus(index)"
           >
@@ -26,7 +26,7 @@
                 <h2 class="text-sm sm:text-base">{{ job.jobName }}</h2>
                 <CommonBrandText
                   :label="job.posNumber"
-                  class="text-primary text-medium sm:text-base text-sm font-bold"
+                  class="text-primary text-medium text-sm font-bold sm:text-base"
                 ></CommonBrandText>
               </div>
               <UIcon name="i-heroicons-arrow-up-right-solid" class="w-15 h-15"></UIcon>
@@ -34,13 +34,17 @@
           </UCard>
         </div>
       </div>
-      <div class="relative my-8 w-full md:max-w-lg md:my-0 basis-3/5">
+      <div class="relative my-8 w-full basis-3/5 md:my-0 md:max-w-lg">
         <NuxtImg src="/gdsc.png" alt="gdsc" class="w-full md:max-w-lg" />
-        <div class="absolute w-full md:max-w-lg top-0">
+        <div class="absolute top-0 w-full md:max-w-lg">
           <NuxtImg src="/overlay.png" alt="overlay" class="w-full md:max-w-lg"></NuxtImg>
         </div>
-        <div class="absolute top-1/2 flex flex-col gap-2 px-4 sm:gap-3 lg:top-3/5 lg:px-8">
-          <h1 class="text-center text-base font-bold text-white sm:text-3xl md:text-2xl lg:text-3xl">Are you a first year student or have no experience?</h1>
+        <div class="lg:top-3/5 absolute top-1/2 flex flex-col gap-2 px-4 sm:gap-3 lg:px-8">
+          <h1
+            class="text-center text-base font-bold text-white sm:text-3xl md:text-2xl lg:text-3xl"
+          >
+            Are you a first year student or have no experience?
+          </h1>
           <UButton
             label="Visit G<Technical/>Trainee Page"
             icon="i-heroicons-arrow-right-solid"

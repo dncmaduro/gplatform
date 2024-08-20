@@ -3,7 +3,8 @@
     <UContainer class="text-center">
       <div class="flex flex-row items-center justify-center leading-10">
         <CommonBrandText
-          label="G<Technical/>"
+          prefix="G"
+          label="Technical"
           suffix="Trainee"
           class="text-2xl font-bold md:text-6xl"
         ></CommonBrandText>

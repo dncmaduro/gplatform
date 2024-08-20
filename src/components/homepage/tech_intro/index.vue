@@ -6,7 +6,7 @@
     <div class="flex flex-col items-center justify-center lg:items-start lg:justify-start">
       <CommonBrandText
         prefix="Using various"
-        label="<technology/>"
+        label="technology"
         suffix="to build good product"
         class="text-center text-2xl font-bold sm:text-4xl lg:text-start"
       ></CommonBrandText>
@@ -24,7 +24,7 @@
         @click="$router.push('/recruitment')"
       ></UButton>
     </div>
-    <div class="grid gap-4 grid-cols-5 sm:gap-5">
+    <div class="grid grid-cols-5 gap-4 sm:gap-5">
       <div v-for="member in memberInfoList" :key="member.id">
         <div class="relative w-full pt-[100%]" :ui="{ body: '' }">
           <UIcon :name="member.logo" class="absolute inset-0 h-full w-full"></UIcon>
