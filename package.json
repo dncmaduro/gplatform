@@ -32,6 +32,7 @@
     "@iconify-json/simple-icons": "^1.1.111",
     "@pinia/nuxt": "^0.5.1",
     "@types/node": "^20.14.8",
+    "@vueuse/core": "^11.0.1",
     "pinia": "^2.1.7",
     "typescript": "^5.5.2"
   }
