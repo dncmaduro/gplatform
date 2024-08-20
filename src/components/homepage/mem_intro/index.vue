@@ -1,6 +1,6 @@
 <template>
   <UContainer
-    class="w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-16 my-16"
+    class="my-16 grid w-full grid-cols-1 items-center gap-16 lg:grid-cols-2"
     :ui="{ constrained: 'lg:max-w-7xl sm:max-w-xl max-w-sm' }"
   >
     <div class="order-last grid grid-cols-4 gap-4 sm:grid-cols-5 sm:gap-5 lg:order-first lg:gap-4">
@@ -26,7 +26,7 @@
     <div class="flex flex-col items-center justify-center lg:items-start lg:justify-start">
       <CommonBrandText
         prefix="Built by"
-        label="<dedicate students/>"
+        label="dedicate students"
         suffix="around Hanoi, Vietnam"
         class="text-center text-2xl font-bold sm:text-4xl lg:text-start"
       ></CommonBrandText>

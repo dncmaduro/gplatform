@@ -3,7 +3,7 @@
     <UContainer class="flex flex-row flex-wrap items-center justify-center text-center font-bold">
       <CommonBrandText
         prefix="Why"
-        label="<choose/>"
+        label="choose"
         suffix="GDSC HANU"
         class="text-2xl md:text-6xl"
       ></CommonBrandText>

@@ -5,24 +5,28 @@
         <div class="text-center">
           <CommonBrandText
             prefix="What we"
-            label="<looking for/>"
+            label="looking for"
             class="text-2xl font-bold md:text-6xl"
           ></CommonBrandText>
         </div>
       </div>
     </UContainer>
     <UContainer>
-    <div class="md:py-8 py-4 text-center text-xs sm:text-base">
-      <h1>
-        GDSC HANU seeks freshmen/newcomers with big ideas! Dive into our fast-paced world, gain
-        skills, and launch your career. No experience? No problem! Bring your enthusiasm and we'll
-        provide the challenge.
-      </h1>
-    </div>
+      <div class="py-4 text-center text-xs sm:text-base md:py-8">
+        <h1>
+          GDSC HANU seeks freshmen/newcomers with big ideas! Dive into our fast-paced world, gain
+          skills, and launch your career. No experience? No problem! Bring your enthusiasm and we'll
+          provide the challenge.
+        </h1>
+      </div>
     </UContainer>
-    <UContainer class="flex flex-row flex-wrap items-center justify-center gap-8 mb-16">
+    <UContainer class="mb-16 flex flex-row flex-wrap items-center justify-center gap-8">
       <div v-for="desire in desireList" :key="desire.id">
-        <RecruitmentTraineeDesireItem :is-bold="false" :icon="desire.icon" :content="desire.content"></RecruitmentTraineeDesireItem>
+        <RecruitmentTraineeDesireItem
+          :is-bold="false"
+          :icon="desire.icon"
+          :content="desire.content"
+        ></RecruitmentTraineeDesireItem>
       </div>
     </UContainer>
   </div>
