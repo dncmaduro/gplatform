@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center gap-1">
-    <span class="text-sm font-medium">{{ duration }}</span>
-    <span class="text-sm">{{ position }}</span>
+    <span class="text-xs font-medium md:text-sm">{{ period }}</span>
+    <span class="text-xs md:text-sm">{{ position }}</span>
   </div>
 </template>
 

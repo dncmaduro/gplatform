@@ -1,16 +1,16 @@
 export type MemberDetailCard = {
   name: string;
-  imageLink: string;
+  avatar: string;
   position: string;
   team: string;
-  activities: {
-    duration: string;
+  memberActivities: {
+    period: string;
     position: string;
   }[];
-  socials: {
+  memberSocialList: {
     linkedin: string;
     github: string;
     email: string;
-    instagram: string;
+    facebook: string;
   };
 };

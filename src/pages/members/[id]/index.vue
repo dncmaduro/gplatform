@@ -2,35 +2,35 @@
   <UContainer>
     <MembersDetailCard
       name="Pham Tien Viet"
-      image-link="/membercard-example.png"
+      avatar="/membercard-example.png"
       position="Co-founded & President"
       team="Board of Leader"
-      :activities="activities"
-      :socials="socials"
+      :member-activities="memberActivities"
+      :member-social-list="memberSocialList"
     />
   </UContainer>
 </template>
 
 <script setup lang="ts">
-const activities = ref([
+const memberActivities = ref([
   {
-    duration: 'Aug 2023 - Present',
+    period: 'Aug 2023 - Present',
     position: 'Co-founder & President',
   },
   {
-    duration: 'Aug 2022 - Aug 2023',
+    period: 'Aug 2022 - Aug 2023',
     position: 'Co-founder & President',
   },
   {
-    duration: 'Aug 2021 - Aug 2022',
+    period: 'Aug 2021 - Aug 2022',
     position: 'Co-founder & Vice President',
   },
 ]);
 
-const socials = ref({
+const memberSocialList = ref({
   github: 'github.com',
   linkedin: 'linkedin.com',
   email: 'email.com',
-  instagram: 'instagram.com',
+  facebook: 'facebook.com',
 });
 </script>

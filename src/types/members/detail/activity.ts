@@ -1,4 +1,4 @@
 export type MembersDetailCardActivity = {
-  duration: string;
+  period: string;
   position: string;
 };
