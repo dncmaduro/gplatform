@@ -1,9 +1,9 @@
 <template>
-  <UBadge size="lg" variant="solid" :color="color || 'white'" class="relative mb-6 hidden sm:block">
+  <UBadge size="lg" variant="solid" :color="color || 'white'" class="relative hidden sm:block">
     <span>{{ team }}</span>
     <MembersHighlight :class="color && 'hidden'" />
   </UBadge>
-  <UBadge size="xs" variant="solid" :color="color || 'white'" class="relative mb-4 sm:hidden">
+  <UBadge size="xs" variant="solid" :color="color || 'white'" class="relative sm:hidden">
     <span class="text-[0.5rem]">{{ team }}</span>
     <MembersHighlight :class="color && 'hidden'" />
   </UBadge>

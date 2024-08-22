@@ -12,7 +12,9 @@
         <span class="hover:blue-400 text-sm sm:text-lg">{{ name }}</span>
         <span class="text-[0.5rem] sm:text-xs">{{ position }}</span>
       </div>
-      <MembersBadge :team="badge.team" />
+      <div class="mb-4 sm:mb-6">
+        <MembersBadge :team="badge.team" />
+      </div>
     </div>
   </div>
 </template>
