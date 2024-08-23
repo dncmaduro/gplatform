@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col gap-2">
-    <div class="flex items-center gap-2 text-2xl">
+  <div class="flex flex-col gap-4">
+    <div class="flex items-center gap-2 text-2xl font-medium">
       <UIcon :name="icon" />
-      <h2 class="font-medium text-gray-950">
+      <h2 class="text-gray-950">
         <CommonBrandText
           :prefix="title.prefix"
           :color="title.color"
@@ -11,7 +11,7 @@
         />
       </h2>
     </div>
-    <ul class="list-disc pl-5 space-y-2 text-gray-950">
+    <ul class="list-disc space-y-1 pl-5 text-gray-950">
       <li v-for="item in descriptionItems" :key="item.id">
         {{ item.content }}
       </li>

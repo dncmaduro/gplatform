@@ -1,7 +1,7 @@
 import type { BrandText } from '../component/brand-text';
 
 export type JobItem = {
-  id: string;
+  id?: string;
   title: string;
   team: string;
   tag?: 'Hot' | 'New';

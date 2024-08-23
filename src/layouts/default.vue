@@ -1,7 +1,7 @@
 <template>
-  <main class="flex flex-col justify-center items-center min-h-screen">
+  <main class="flex min-h-screen flex-col items-center justify-center">
     <Header />
-    <section class="flex flex-col md:gap-16 flex-auto w-full mt-[72px]">
+    <section class="mt-[72px] w-full flex-auto">
       <slot />
     </section>
     <Footer />
