@@ -39,18 +39,18 @@
 import type { CommonSearch } from '~/types/component/search';
 
 const emit = defineEmits<{
-  (e: 'search', searchData: string | null, filterOption?: string): void;
+  (e: 'search', searchData: string | undefined, filterOption?: string): void;
 }>();
 
 const props = withDefaults(defineProps<CommonSearch>(), {
   search: false,
   placeholder: 'Search',
   size: 'xl',
-  loading: true,
+  loading: false,
 });
 const filterOption = ref('');
 
-const searchData = ref(null);
+const searchData = ref();
 
 onMounted(() => {
   if (props.filterOption) {

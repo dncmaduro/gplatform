@@ -1,8 +1,8 @@
 <template>
-  <div class="mdgap-4 flex flex-col items-center gap-2">
+  <div class="md:gap-4 flex flex-col items-center gap-2">
     <NuxtImg
       :src="avatar"
-      class="w-[100px] items-center rounded-full border border-gray-500 md:w-[250px]"
+      class="w-[100px] items-center rounded-full border border-gray-300 md:w-[250px]"
     />
     <div class="flex flex-col items-center gap-2">
       <span class="text-lg font-medium md:text-2xl">{{ name }}</span>
