@@ -1,28 +1,28 @@
 <template>
-  <div class="flex gap-8 flex flex-col lg:flex-row">
+  <div class="flex gap-8 flex-col lg:flex-row">
     <CommonSearch placeholder="Developer ..." search size="xl" class="grow" />
     <div class="flex gap-8 flex-wrap justify-center">
       <USelect
-        :options="teamOptions"
         v-model="teamOption"
+        :options="teamOptions"
         size="xl"
         class="rounded-md min-w-[132px]"
       />
       <USelect
-        :options="genOptions"
         v-model="genOption"
+        :options="genOptions"
         size="xl"
         class="rounded-md min-w-[132px]"
       />
       <USelect
-        :options="levelOptions"
         v-model="levelOption"
+        :options="levelOptions"
         size="xl"
         class="rounded-md min-w-[132px]"
       />
       <USelect
-        :options="sortOptions"
         v-model="sortOption"
+        :options="sortOptions"
         size="xl"
         class="rounded-md min-w-[132px]"
       />

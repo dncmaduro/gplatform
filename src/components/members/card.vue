@@ -6,7 +6,7 @@
       <img
         :src="imageLink"
         :alt="name"
-        class="mt-4 w-[100px] rounded-full border border-gray-50 sm:mt-8 sm:w-[200px]"
+        class="mt-4 w-[100px] rounded-full border border-gray-300 sm:mt-8 sm:w-[200px]"
       />
       <div class="mt-2 flex flex-col justify-between gap-2 text-center">
         <span class="hover:blue-400 text-sm sm:text-lg">{{ name }}</span>
