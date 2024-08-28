@@ -1,10 +1,9 @@
 <template>
-  <UContainer class="flex justify-center items-center min-h-screen">
+  <main class="flex min-h-screen flex-col items-center justify-center">
     <Header />
-    <slot />
-  </UContainer>
+    <section class="mt-[72px] w-full flex-auto">
+      <slot />
+    </section>
+    <Footer />
+  </main>
 </template>
-
-<script setup lang="ts"></script>
-
-<style scoped></style>

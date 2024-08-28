@@ -1,9 +1,12 @@
 <template>
   <div>
-    <NuxtLayout layout="default">
-      <Home />
-    </NuxtLayout>
+    <HomepageAboveTheFold />
+    <HomepageWelcome/>
+    <HomepageCoreValue />
+    <HomepageProject />
+    <HomepageMemIntro />
+    <HomepageTechIntro />
+    <RecruitmentJobNavigationTitle/>
+    <RecruitmentTestimonials />
   </div>
 </template>
-
-<script setup lang="ts"></script>

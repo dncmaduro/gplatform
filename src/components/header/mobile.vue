@@ -9,19 +9,17 @@
 
   <USlideover v-model="isOpen" side="left">
     <div class="p-4 flex flex-1 flex-col gap-8 items-center justify-center">
-      <HeaderLogo />
+      <CommonLogo />
       <ul class="flex flex-col gap-8 text-base flex-1 w-full">
-        <li>
-          <nuxt-link to="/find-college">Members</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/products">Products</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/recruitment">Recruitment</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/event">Event</nuxt-link>
+        <li
+          v-for="route in props.routes"
+          :key="route.path"
+          class="py-2"
+          :class="$route.path === route.path ? 'border-b border-primary' : ''"
+        >
+          <nuxt-link :to="route.path" class="px-1.5 py-2">{{
+            route.name
+          }}</nuxt-link>
         </li>
       </ul>
       <div class="md:gap-4 gap-2 flex flex-col w-full">
@@ -38,5 +36,11 @@
 </template>
 
 <script setup lang="ts">
+type Props = {
+  routes: { path: string; name: string }[];
+};
+
+const props = defineProps<Props>();
+
 const isOpen = ref(false);
 </script>
