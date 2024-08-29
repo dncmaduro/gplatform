@@ -20,7 +20,6 @@
     "@nuxt/eslint": "^0.3.13",
     "@nuxt/image": "^1.7.0",
     "@nuxt/ui": "^2.13.0",
-    "@nuxtjs/device": "^3.1.1",
     "@nuxtjs/google-fonts": "^3.2.0",
     "eslint": "^9.5.0",
     "nuxt": "^3.10.1",
@@ -28,8 +27,11 @@
     "prettier-plugin-tailwindcss": "^0.6.5"
   },
   "dependencies": {
+    "@iconify-json/logos": "^1.1.43",
+    "@iconify-json/simple-icons": "^1.1.111",
     "@pinia/nuxt": "^0.5.1",
     "@types/node": "^20.14.8",
+    "@vueuse/core": "^11.0.1",
     "pinia": "^2.1.7",
     "typescript": "^5.5.2"
   }

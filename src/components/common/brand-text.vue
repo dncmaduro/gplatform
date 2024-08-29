@@ -7,15 +7,18 @@
 </template>
 
 <script lang="ts" setup>
-import type { BrandText } from "~/types/component/brand-text";
+import type { BrandText } from '~/types/component/brand-text';
 
 const props = withDefaults(defineProps<BrandText>(), {
-  color: "primary",
+  color: 'primary',
 });
+
 const color = computed(() => {
   return `text-${props.color}`;
 });
 
-const label = computed(() => props.label.replace(/\s+/g, "_"));
-
+const label = computed(() => {
+  const formattedLabel = props.label.replace(/\s+/g, '_');
+  return `<${formattedLabel}/>`;
+});
 </script>

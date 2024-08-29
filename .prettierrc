@@ -5,6 +5,5 @@
   "useTabs": false,
   "semi": true,
   "singleQuote": true,
-  "quoteProps": "as-needed",
-  "jsxSingleQuote": false
+  "quoteProps": "as-needed"
 }

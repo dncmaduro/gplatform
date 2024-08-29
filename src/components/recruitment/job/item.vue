@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-4 sm:p-8 rounded-lg border border-gray-300 hover:border-primary-500 bg-white hover:bg-blue-50 cursor-pointer transition duration-300 ease-in-out"
+    class="p-4 sm:p-8 rounded-lg border border-gray-300 hover:border-primary-500 bg-white hover:bg-blue-50 cursor-pointer transition duration-300 ease-in-out" @click="$router.push(`/recruitment/apply/${props.id}`)"
   >
     <div class="mb-1 sm:mb-2 flex justify-between gap-2">
       <p class="text-sm sm:text-base text-gray-600">{{ props.team }}</p>

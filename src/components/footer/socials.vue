@@ -20,11 +20,11 @@ const socialItems = [
     icon: 'i-mdi-instagram',
     link: 'https://www.instagram.com/gdsc.hanu/',
   },
-]
+];
 </script>
 
 <template>
-  <div class="flex gap-8 mt-4 md:mt-0">
+  <div class="mt-4 flex gap-8 md:mt-0">
     <FooterSocialLink
       v-for="item in socialItems"
       :key="item.icon"

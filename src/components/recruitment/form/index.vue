@@ -1,5 +1,5 @@
 <template>
-  <UForm class="flex flex-col gap-8 mt-10 w-full max-w-[600px] mx-4">
+  <UForm class="mx-4 mt-10 flex w-full max-w-[600px] flex-col gap-8">
     <UFormGroup label="Input" required error="Full name is required">
       <UInput size="xl" color="white" placeholder="Placeholder..." />
     </UFormGroup>
@@ -14,16 +14,18 @@
 
     <UFormGroup
       label="Upload your CV (PDF format)"
-      class="flex flex-col md:flex-row justify-between items-start gap-2 md:items-center"
-      description="Your file name goes here"
+      class="flex flex-col items-start justify-between gap-2 md:flex-row md:items-center"
+      :description="(files && files[0].name) || 'Your file name goes here'"
       required
     >
-      <UInput
-        type="file"
+      <UButton
+        label="Upload"
         size="xl"
-        class="w-full md:w-[268px]"
-        icon="i-heroicons-cloud-arrow-up"
-      ></UInput>
+        color="white"
+        class="flex w-[268px] justify-center"
+        leading-icon="i-heroicons-cloud-arrow-up"
+        @click="open()"
+      />
     </UFormGroup>
 
     <div class="flex flex-col gap-2">
@@ -38,3 +40,12 @@
     </div>
   </UForm>
 </template>
+
+<script setup lang="ts">
+import { useFileDialog } from '@vueuse/core';
+
+const { files, open } = useFileDialog({
+  accept: '.pdf',
+  directory: false,
+});
+</script>
