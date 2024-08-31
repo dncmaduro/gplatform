@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     ],
     '@pinia/nuxt',
     '@nuxt/eslint',
+    '@samk-dev/nuxt-vcalendar',
   ],
   colorMode: {
     preference: 'light',
