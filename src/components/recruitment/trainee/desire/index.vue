@@ -35,17 +35,17 @@
 const desireList = ref([
   {
     id: 1,
-    icon: '/student.png',
+    icon: '/student.svg',
     content: 'First or second year students in Hanoi',
   },
   {
     id: 2,
-    icon: '/code.png',
+    icon: '/code.svg',
     content: 'Passion in technology and software',
   },
   {
     id: 3,
-    icon: '/up-left.png',
+    icon: '/up-left.svg',
     content: 'Willingness to grow and learn',
   },
 ]);

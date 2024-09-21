@@ -1,48 +1,82 @@
 <template>
-  <UForm class="mx-4 mt-10 flex w-full max-w-[800px] flex-col gap-8">
-    <UFormGroup label="Full name" required>
-      <UInput size="xl" color="white" placeholder="Enter your full name..." required />
-    </UFormGroup>
-
-    <UFormGroup label="Date of Birth" required>
-      <UPopover :popper="{ placement: 'bottom-start' }">
-        <UButton
-          icon="i-heroicons-calendar-days-20-solid"
-          :label="formattedDate"
-          class="w-full"
+  <UForm :state="formState" class="mx-4 mt-10 flex w-full max-w-[800px] flex-col gap-8">
+    <div class="flex w-full flex-col gap-8 md:flex-row">
+      <UFormGroup label="Full name" required class="w-full">
+        <UInput
+          v-model="formState.fullName"
           size="xl"
           color="white"
+          placeholder="Enter your full name..."
+          required
         />
-
-        <template #panel>
-          <VDatePicker v-model="date" required />
-        </template>
-      </UPopover>
-    </UFormGroup>
-
-    <div class="flex w-full gap-8">
-      <UFormGroup label="Email" required class="grow">
-        <UInput size="xl" color="white" placeholder="Enter your email.." required />
       </UFormGroup>
-      <UFormGroup label="Phone number" required class="grow">
-        <UInput size="xl" color="white" placeholder="Enter your phone number..." required />
+
+      <UFormGroup label="Date of Birth" required class="w-full">
+        <UPopover :popper="{ placement: 'bottom-start' }">
+          <UButton
+            icon="i-heroicons-calendar-days-20-solid"
+            :label="formattedDate"
+            class="w-full"
+            size="xl"
+            color="white"
+          />
+
+          <template #panel="{ close }">
+            <VDatePicker v-model="formState.dob" @close="close" />
+          </template>
+        </UPopover>
       </UFormGroup>
     </div>
 
-    <UFormGroup label="Facebook Link" required class="grow">
-      <UInput size="xl" color="white" placeholder="Enter your Facebook link..." required />
-    </UFormGroup>
+    <div class="flex w-full flex-col gap-8 md:flex-row">
+      <UFormGroup label="Email" required class="grow">
+        <UInput
+          v-model="formState.email"
+          size="xl"
+          color="white"
+          placeholder="Enter your email.."
+          required
+        />
+      </UFormGroup>
+      <UFormGroup label="Phone number" required class="grow">
+        <UInput
+          v-model="formState.phoneNumber"
+          size="xl"
+          color="white"
+          placeholder="Enter your phone number..."
+          required
+        />
+      </UFormGroup>
+    </div>
 
-    <UFormGroup label="University/ Institute" required class="grow">
-      <UInput size="xl" color="white" placeholder="Enter your University/ Institute..." required />
-    </UFormGroup>
+    <div class="flex w-full flex-col gap-8 md:flex-row">
+      <UFormGroup label="University/ Institute" required class="w-full">
+        <UInput
+          v-model="formState.university"
+          size="xl"
+          color="white"
+          placeholder="Enter your University/ Institute..."
+          required
+        />
+      </UFormGroup>
 
-    <UFormGroup label="Year" required>
-      <USelect
-        v-model="yearOption"
+      <UFormGroup label="Year" required class="w-full">
+        <USelect
+          v-model="formState.year"
+          size="xl"
+          placeholder="Select"
+          :options="yearOptions"
+          required
+        />
+      </UFormGroup>
+    </div>
+
+    <UFormGroup label="Facebook Link" required class="w-full">
+      <UInput
+        v-model="formState.facebook"
         size="xl"
-        placeholder="Select"
-        :options="yearOptions"
+        color="white"
+        placeholder="Enter your Facebook link..."
         required
       />
     </UFormGroup>
@@ -52,11 +86,11 @@
       required
       color="black"
     >
-      <UTextarea required />
+      <UTextarea v-model="formState.plans" required />
     </UFormGroup>
 
     <UFormGroup label="What are your related experience to this position?" required color="black">
-      <UTextarea required />
+      <UTextarea v-model="formState.experience" required />
     </UFormGroup>
 
     <UFormGroup
@@ -64,7 +98,7 @@
       required
       color="black"
     >
-      <UTextarea required />
+      <UTextarea v-model="formState.interested" required />
     </UFormGroup>
 
     <UFormGroup
@@ -72,7 +106,7 @@
       required
       color="black"
     >
-      <UTextarea required />
+      <UTextarea v-model="formState.contributing" required />
     </UFormGroup>
 
     <UFormGroup
@@ -80,12 +114,12 @@
       required
       color="black"
     >
-      <UTextarea required />
+      <UTextarea v-model="formState.expectations" required />
     </UFormGroup>
 
     <UFormGroup label="How do your hear about this position?" required color="black">
       <USelect
-        v-model="accessOption"
+        v-model="formState.hearAbout"
         size="xl"
         placeholder="Select"
         :options="accessOptions"
@@ -118,7 +152,23 @@
 
 <script setup lang="ts">
 import { useFileDialog } from '@vueuse/core';
-import type { UploadButtonStatus } from '~/types/recruitment/form';
+import type { ApplyForm, UploadButtonStatus } from '~/types/recruitment/form';
+
+const formState = reactive<ApplyForm>({
+  fullName: '',
+  dob: null,
+  email: '',
+  phoneNumber: '',
+  facebook: '',
+  university: '',
+  year: '',
+  plans: '',
+  experience: '',
+  interested: '',
+  contributing: '',
+  expectations: '',
+  hearAbout: '',
+});
 
 const uploadButtonStatus = ref<UploadButtonStatus>('default');
 
@@ -130,19 +180,17 @@ const { files, open } = useFileDialog({
 });
 
 const selectedFile = ref<File | null>(null);
-const fileError = ref<string | null>(null);
+const fileError = ref<string>('');
 
 watch(files, (newFiles: FileList | null) => {
   if (newFiles && newFiles[0]?.size > MAX_FILE_SIZE) {
     fileError.value = 'File size exceeds 20MB. Please upload a smaller file.';
     selectedFile.value = null;
   } else {
-    fileError.value = null;
+    fileError.value = '';
     selectedFile.value = newFiles ? newFiles[0] : null;
   }
 });
-
-const date = ref<Date | null>(null);
 
 const yearOptions = ref([
   {
@@ -198,10 +246,7 @@ const accessOptions = ref([
   },
 ]);
 
-const yearOption = ref();
-const accessOption = ref();
-
 const formattedDate = computed(() => {
-  return date.value ? date.value.toLocaleDateString() : 'Select';
+  return formState.dob ? formState.dob.toLocaleDateString() : 'Select';
 });
 </script>

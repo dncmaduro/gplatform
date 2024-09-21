@@ -38,22 +38,22 @@
 const desireList = ref([
   {
     id: 1,
-    icon: '/student.png',
+    icon: '/student.svg',
     content: 'Human',
   },
   {
     id: 2,
-    icon: '/up-left.png',
+    icon: '/up-left.svg',
     content: 'Develop',
   },
   {
     id: 3,
-    icon: '/code.png',
+    icon: '/code.svg',
     content: 'Tech',
   },
   {
     id: 4,
-    icon: '/community.png',
+    icon: '/community.svg',
     content: 'Community',
   },
 ]);

@@ -25,9 +25,11 @@
       ></UButton>
     </div>
     <div class="grid grid-cols-5 gap-4 sm:gap-5">
-      <div v-for="member in memberInfoList" :key="member.id">
+      <div v-for="techstack in techstackList" :key="techstack.id">
         <div class="relative w-full pt-[100%]" :ui="{ body: '' }">
-          <UIcon :name="member.logo" class="absolute inset-0 h-full w-full"></UIcon>
+          <nuxt-link :to="techstack.url">
+            <UIcon :name="techstack.logo" class="absolute inset-0 h-full w-full"></UIcon>
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -35,86 +37,106 @@
 </template>
 
 <script setup lang="ts">
-const memberInfoList = ref([
+const techstackList = ref([
   {
     id: '1',
     logo: 'i-logos-html-5',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
   },
   {
     id: '2',
     logo: 'i-logos-css-3',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
   },
   {
     id: '3',
     logo: 'i-logos-tailwindcss-icon',
+    url: 'https://tailwindcss.com/',
   },
   {
     id: '4',
     logo: 'i-logos-javascript',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
   },
   {
     id: '5',
     logo: 'i-logos-typescript-icon',
+    url: 'https://www.typescriptlang.org/',
   },
   {
     id: '6',
     logo: 'i-logos-vue',
+    url: 'https://vuejs.org/',
   },
   {
     id: '7',
     logo: 'i-logos-nuxt-icon',
+    url: 'https://nuxt.com/',
   },
   {
     id: '8',
     logo: 'i-logos-react',
+    url: 'https://react.dev/',
   },
   {
     id: '9',
     logo: 'i-logos-nextjs-icon',
+    url: 'https://nextjs.org/',
   },
   {
     id: '10',
     logo: 'i-logos-pinia',
+    url: 'https://pinia.vuejs.org/',
   },
   {
     id: '11',
     logo: 'i-logos-supabase-icon',
+    url: 'https://supabase.com/',
   },
   {
     id: '12',
     logo: 'i-logos-nodejs-icon',
+    url: 'https://nodejs.org',
   },
   {
     id: '13',
     logo: 'i-logos-java',
+    url: 'https://www.java.com/',
   },
   {
     id: '14',
     logo: 'i-logos-spring-icon',
+    url: 'https://spring.io/',
   },
   {
     id: '15',
     logo: 'i-logos-mysql-icon',
+    url: 'https://www.mysql.com/',
   },
   {
     id: '16',
     logo: 'i-logos-mongodb-icon',
+    url: 'https://www.mongodb.com/',
   },
   {
     id: '17',
     logo: 'i-logos-flutter',
+    url: 'https://flutter.dev/',
   },
   {
     id: '18',
     logo: 'i-logos-android-icon',
+    url: 'https://www.android.com/',
   },
   {
     id: '19',
     logo: 'i-logos-yarn',
+    url: 'https://classic.yarnpkg.com/',
   },
   {
     id: '20',
     logo: 'i-logos-github-icon',
+    url: 'https://github.com/',
   },
 ]);
 </script>
