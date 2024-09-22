@@ -9,22 +9,41 @@
         ></CommonBrandText>
       </div>
       <div class="mt-4 text-center">
-        <span
-          >If you have further questions, please don’t hesitate to drop an email to
-          gdsclead@gdschanu.com</span
-        >
+        <span>
+          If you have further questions, please don’t hesitate to drop an email to
+          gdsclead@gdschanu.com
+        </span>
       </div>
     </UContainer>
     <UContainer class="my-8">
-      <UAccordion color="white" :items="faqList" size="xl">
+      <UAccordion
+        color="white"
+        :items="faqList"
+        size="xl"
+        variant="ghost"
+        :have-slot="false"
+        state="default"
+        :ui="{ item: { padding: '' } }"
+      >
         <template #default="{ item, open }">
           <UButton
             color="blue"
             variant="ghost"
             class="border-gray my-2 border border-2 border-solid p-6"
-            :class="[open && 'bg-blue-50 border-blue-300']"
+            :class="[open && 'border-blue-300 bg-blue-50']"
           >
-            <span class="text-primary">{{ item.label }}</span>
+            <div class="flex flex-col items-start">
+              <span class="text-primary">{{ item.label }}</span>
+              <span
+                :class="[
+                  'transition-all duration-300 ease-in-out',
+                  open ? 'mt-4 max-h-40 opacity-100' : 'mt-0 max-h-0 opacity-0',
+                ]"
+                class="overflow-hidden text-gray-700"
+              >
+                {{ item.answer }}
+              </span>
+            </div>
 
             <template #trailing>
               <UIcon
@@ -47,17 +66,17 @@ const faqList = ref<Faq[]>([
   {
     id: '1',
     label: 'Title',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
   },
   {
     id: '2',
     label: 'Title',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
   },
   {
     id: '3',
     label: 'Title',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
   },
 ]);
 </script>

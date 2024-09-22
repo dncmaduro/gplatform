@@ -1,11 +1,11 @@
 <template>
   <div>
-  <Recruitment />
-  <RecruitmentOpeningJob/>
-  <RecruitmentHiringProcess/>
-  <RecruitmentJobNavigationTitle/>
-  <RecruitmentFaq/>
-  <RecruitmentTestimonials/>
+    <Recruitment />
+    <RecruitmentOpeningJob />
+    <RecruitmentHiringProcess />
+    <RecruitmentJobNavigationTitle />
+    <RecruitmentFaq />
+    <RecruitmentTestimonials />
   </div>
 </template>
 

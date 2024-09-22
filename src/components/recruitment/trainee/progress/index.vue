@@ -23,16 +23,13 @@
         <CommonBrandText
           :label="progress.label"
           :suffix="progress.suffix"
-          :color="progress.titleColor"
+          :color="`${progress.color}-500`"
           class="text-center text-2xl font-bold"
         ></CommonBrandText>
         <div class="flex flex-row justify-center md:flex-col">
           <div
             class="flex justify-center"
-            :class="{
-              'flex-col md:flex-row': Number(progress.id) % 2 === 0,
-              'flex-row': Number(progress.id) % 2 !== 0,
-            }"
+            :class="`${Number(progress.id) % 2 ? 'flex-row' : 'flex-col md:flex-row'}`"
           >
             <div v-for="(month, index) in progress.monthList" :key="index">
               <div
@@ -46,24 +43,15 @@
                   month
                 }}</UBadge>
                 <div
-                  v-show="index < progress.monthList.length - 1"
-                  :class="[
-                    getBackgroundColorClass(progress.lineColor),
-                    {
-                      'h-12 w-1 md:h-1 md:w-40': Number(progress.id) % 2 === 0,
-                      'h-1 w-40': Number(progress.id) % 2 !== 0,
-                    },
-                  ]"
+                  v-if="index < progress.monthList.length - 1"
+                  :class="`bg-${progress.color}-100 ${Number(progress.id) % 2 ? 'h-12 w-1 md:h-1 md:w-40' : 'h-1 w-40'}`"
                 ></div>
               </div>
             </div>
           </div>
           <div
             class="flex flex-row items-center justify-between py-8 text-xs md:px-8"
-            :class="{
-              'flex-col md:flex-row': Number(progress.id) % 2 === 0,
-              'flex-row': Number(progress.id) % 2 !== 0,
-            }"
+            :class="`${Number(progress.id) % 2 ? 'flex-col md:flex-row' : 'flex-row'}`"
           >
             <div v-for="(skill, index) in progress.levels" :key="index">
               <p>{{ skill }}</p>
@@ -76,47 +64,32 @@
 </template>
 
 <script setup lang="ts">
-type progressList = {
-  id: string;
-  label: string;
-  suffix: string;
-  levels: string[];
-  monthList: string[];
-  titleColor: string;
-  lineColor: string;
-};
+import type { ProgressList } from '~/types/recruitment/trainee/progress-list';
 
-const list = ref<progressList[]>([
+const list = ref<ProgressList[]>([
   {
     id: '1',
-    label: '<Culture/>',
+    label: 'Culture',
     suffix: 'Training',
     levels: [],
     monthList: ['December', 'January'],
-    titleColor: 'blue-500',
-    lineColor: 'blue-100',
+    color: 'blue',
   },
   {
     id: '2',
-    label: '<Technical/>',
+    label: 'Technical',
     suffix: 'Training',
     monthList: ['January', 'March', 'May', 'June'],
     levels: ['Basic Programming', 'Advance Programming', 'Framework Using'],
-    titleColor: 'red-500',
-    lineColor: 'red-100',
+    color: 'red',
   },
   {
     id: '3',
-    label: '<Graduate/>',
+    label: 'Graduate',
     suffix: 'Day',
     monthList: ['July'],
     levels: [],
-    titleColor: 'green-500',
-    lineColor: '',
+    color: 'green',
   },
 ]);
-
-function getBackgroundColorClass(color: string): string {
-  return `bg-${color}`;
-}
 </script>

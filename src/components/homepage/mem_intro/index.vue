@@ -11,27 +11,30 @@
             :alt="member.memberImage"
             class="absolute inset-0 h-full w-full"
             loading="lazy"
-            @mouseover="() => handleBadge(index)"
-            @mouseleave="() => handleBadge(index)"
-          ></NuxtImg>
+            @mouseover="handleBadge(index, true)"
+            @mouseleave="handleBadge(index, false)"
+          />
           <UBadge
             :label="member.name"
             color="white"
-            class="absolute -bottom-2 left-4 mx-auto"
-            :class="member.displayBadge ? 'block' : 'hidden'"
-          ></UBadge>
+            class="absolute -bottom-2 left-4 mx-auto transform transition-opacity duration-300 ease-in-out"
+            :class="{
+              'opacity-100': member.displayBadge,
+              'opacity-0': !member.displayBadge,
+            }"
+          />
         </UCard>
       </div>
     </div>
     <div class="flex flex-col items-center justify-center lg:items-start lg:justify-start">
       <CommonBrandText
         prefix="Built by"
-        label="dedicate students"
+        label="dedicated students"
         suffix="around Hanoi, Vietnam"
         class="text-center text-2xl font-bold sm:text-4xl lg:text-start"
-      ></CommonBrandText>
+      />
       <p class="my-4 text-center text-sm sm:text-2xl lg:text-start">
-        The development of GDSC HANU led dedicate members. The community is made up of members with
+        The development of GDSC HANU led dedicated members. The community is made up of members with
         different horizons and skills. We are happy to see new members every day and encourage
         anyone to join us and help in many ways.
       </p>
@@ -43,12 +46,14 @@
         size="xl"
         class="rounded-full"
         @click="$router.push('/members')"
-      ></UButton>
+      />
     </div>
   </UContainer>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+
 const memberInfoList = ref([
   {
     id: '1',
@@ -172,7 +177,7 @@ const memberInfoList = ref([
   },
 ]);
 
-const handleBadge = (id: number) => {
-  memberInfoList.value[id].displayBadge = !memberInfoList.value[id].displayBadge;
+const handleBadge = (index: number, show: boolean) => {
+  memberInfoList.value[index].displayBadge = show;
 };
 </script>

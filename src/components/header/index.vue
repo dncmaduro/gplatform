@@ -1,56 +1,33 @@
 <script setup lang="ts">
 const routes = ref([
   { path: '/members', name: 'Members' },
-  { path: '/products', name: 'Products' },
-  { path: '/recruitment', name: 'Recruitment'},
-  { path: '/event', name: 'Event' },
+  { path: '/recruitment', name: 'Recruitment' },
 ]);
 </script>
 
 <template>
-  <div
-    class="w-full fixed top-0 bg-white z-50 shadow-md md:px-8 px-4 py-4 text-black"
-  >
+  <div class="fixed top-0 z-50 w-full bg-white px-4 py-4 text-black shadow-md md:px-8">
     <UContainer v-if="$route.name === '404'">
       <Header404 />
     </UContainer>
-    <UContainer
-      v-else
-      class="flex md:justify-between justify-start gap-4 md:gap-0 items-center"
-    >
+    <UContainer v-else class="flex items-center justify-start gap-4 md:justify-between md:gap-0">
       <div class="md:hidden">
         <HeaderMobile :routes="routes" />
       </div>
-      <CommonLogo />
-      <ul class="md:flex gap-2 text-base leading-5 hidden">
+      <CommonLogo responsive />
+      <ul class="hidden gap-2 text-base leading-5 md:flex">
         <li
           v-for="route in routes"
           :key="route.path"
           class="py-2"
-          :class="$route.path === route.path ? 'border-b border-primary' : ''"
+          :class="$route.path === route.path ? 'border-primary border-b' : ''"
         >
-          <nuxt-link :to="route.path" class="px-1.5 py-2">{{
-            route.name
-          }}</nuxt-link>
+          <nuxt-link :to="route.path" class="px-1.5 py-2">{{ route.name }}</nuxt-link>
         </li>
       </ul>
       <div class="flex gap-4">
         <CommonSearch size="lg" />
-        <UButton
-          icon="i-heroicons-globe-asia-australia"
-          size="lg"
-          class="!rounded-full !border-gray-400 !ring-gray-3 00"
-          color="black"
-          variant="outline"
-          label="Language"
-          :trailing="false"
-        />
-
-        <UAvatar
-          src="https://avatars.githubusercontent.com/u/739984?v=4"
-          alt="Avatar"
-          size="md"
-        />
+        <UButton size="lg" class="rounded-full" label="Sign in" />
       </div>
     </UContainer>
   </div>
