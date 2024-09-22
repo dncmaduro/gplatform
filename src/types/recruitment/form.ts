@@ -11,3 +11,19 @@ export type UploadButton = {
 export type UploadButtonVariant = {
   status: UploadButtonStatus;
 };
+
+export type ApplyForm = {
+  fullName: string;
+  dob: Date | null;
+  email: string;
+  phoneNumber: string;
+  facebook: string;
+  university: string;
+  year: string;
+  plans: string;
+  experience: string;
+  interested: string;
+  contributing: string;
+  expectations: string;
+  hearAbout: string;
+};

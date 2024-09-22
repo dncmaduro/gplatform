@@ -44,11 +44,13 @@
           />
         </div>
         <div class="flex w-full justify-center md:justify-start">
-          <UButton label="Apply for this position" size="xl" :ui="{ rounded: 'rounded-full' }">
-            <template #trailing>
-              <UIcon name="i-heroicons-arrow-small-right" class="h-6 w-5" />
-            </template>
-          </UButton>
+          <nuxt-link :to="`/recruitment/opening/${jobId}/apply`">
+            <UButton label="Apply for this position" size="xl" :ui="{ rounded: 'rounded-full' }">
+              <template #trailing>
+                <UIcon name="i-heroicons-arrow-small-right" class="h-6 w-5" />
+              </template>
+            </UButton>
+          </nuxt-link>
         </div>
       </div>
       <div class="flex flex-col items-center justify-center gap-8 md:justify-start">

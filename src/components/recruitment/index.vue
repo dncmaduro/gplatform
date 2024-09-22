@@ -7,7 +7,7 @@
       >
         <div class="text-center text-3xl font-bold md:text-8xl">
           <CommonBrandText label="Build" />
-          <h1 class="text-black">your future</h1>
+          <h1 class="w-max text-black">your future</h1>
         </div>
         <h2 class="text-center text-4xl text-gray-950">Become a part of GDSC HANU</h2>
         <CommonSearch filter search size="xl" />
