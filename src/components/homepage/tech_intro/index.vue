@@ -27,9 +27,9 @@
     <div class="grid grid-cols-5 gap-4 sm:gap-5">
       <div v-for="techstack in techstackList" :key="techstack.id">
         <div class="relative w-full pt-[100%]" :ui="{ body: '' }">
-          <nuxt-link :to="techstack.url">
+          <NuxtLink :to="techstack.url">
             <UIcon :name="techstack.logo" class="absolute inset-0 h-full w-full"></UIcon>
-          </nuxt-link>
+          </NuxtLink>
         </div>
       </div>
     </div>

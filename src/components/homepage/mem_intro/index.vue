@@ -4,26 +4,17 @@
     :ui="{ constrained: 'lg:max-w-7xl sm:max-w-xl max-w-sm' }"
   >
     <div class="order-last grid grid-cols-4 gap-4 sm:grid-cols-5 sm:gap-5 lg:order-first lg:gap-4">
-      <div v-for="(member, index) in memberInfoList" :key="member.id">
-        <UCard class="relative w-full pt-[100%]" :ui="{ body: '' }">
-          <NuxtImg
-            :src="member.memberImage"
-            :alt="member.memberImage"
-            class="absolute inset-0 h-full w-full"
-            loading="lazy"
-            @mouseover="handleBadge(index, true)"
-            @mouseleave="handleBadge(index, false)"
-          />
+      <div v-for="member in memberInfoList" :key="member.id">
+        <NuxtLink :to="`/members/${member.id}`">
+        <div class="relative w-12.5 lg:w-25 group cursor-pointer">
+          <NuxtImg class="border border-gray-300 group-hover:border-primary-500 rounded-md" :src="member.memberImage ?? ''" alt="" loading="lazy" />
           <UBadge
             :label="member.name"
             color="white"
-            class="absolute -bottom-2 left-4 mx-auto transform transition-opacity duration-300 ease-in-out"
-            :class="{
-              'opacity-100': member.displayBadge,
-              'opacity-0': !member.displayBadge,
-            }"
+            class="absolute roup-hover:border-primary-500 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 -translate-y-3 w-max mx-auto transform transition-opacity transition-100 ease-in-out"
           />
-        </UCard>
+        </div>
+      </NuxtLink>
       </div>
     </div>
     <div class="flex flex-col items-center justify-center lg:items-start lg:justify-start">
@@ -59,125 +50,101 @@ const memberInfoList = ref([
     id: '1',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '2',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '3',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '4',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '5',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '6',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '7',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '8',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '9',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '10',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '11',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '12',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '13',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '14',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '15',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '16',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '17',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '18',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '19',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
   {
     id: '20',
     memberImage: '/mem1.png',
     name: 'Tien Viet',
-    displayBadge: false,
   },
 ]);
-
-const handleBadge = (index: number, show: boolean) => {
-  memberInfoList.value[index].displayBadge = show;
-};
 </script>

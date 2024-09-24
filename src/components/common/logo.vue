@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link to="/">
+  <NuxtLink to="/">
     <NuxtImg format="webp" width="350" src="/logo.png" :class="responsive && 'hidden md:block'" />
     <NuxtImg
       format="webp"
@@ -7,7 +7,7 @@
       src="/mobile-logo.png"
       :class="responsive ? 'md:hidden' : 'hidden'"
     />
-  </nuxt-link>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">
