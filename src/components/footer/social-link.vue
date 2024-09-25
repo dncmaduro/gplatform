@@ -16,11 +16,11 @@ const props = defineProps({
     size="xl"
     variant="outline"
     class="rounded-full"
-    :to="link"
+    :to="props.link"
     color="white"
     square
     target="_blank"
   >
-    <UIcon :name="icon" dynamic class="h-6 w-6" />
+    <UIcon :name="props.icon" dynamic class="h-6 w-6" />
   </UButton>
 </template>

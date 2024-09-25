@@ -1,6 +1,6 @@
 <template>
   <UContainer
-    class="my-16 flex flex-col-reverse items-center justify-center gap-8 lg:flex-row lg:justify-between"
+    class="-mt-20 flex flex-col-reverse items-center justify-center gap-8 h-screen lg:flex-row lg:justify-between"
     :ui="{ constrained: '2xl:max-w-7xl lg:max-w-full max-w-3xl' }"
   >
     <div class="flex flex-col justify-center gap-8 lg:basis-3/5 lg:justify-between">
@@ -34,6 +34,7 @@
           size="xl"
           color="gray"
           class="rounded-full"
+          @click="handleScroll"
         ></UButton>
       </div>
     </div>
@@ -46,3 +47,12 @@
     </div>
   </UContainer>
 </template>
+<script lang="ts" setup>
+const emit = defineEmits<{
+  (e: 'handleScroll'): void
+}>()
+
+const handleScroll = () => {
+  emit('handleScroll')
+}
+</script>
