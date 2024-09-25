@@ -1,6 +1,6 @@
 <template>
   <UContainer
-    class="mb-16 flex flex-col items-center justify-center gap-8 lg:flex-row lg:gap-16"
+    class="py-20 flex flex-col items-center justify-center gap-8 lg:flex-row lg:gap-16"
     :ui="{ constrained: 'lg:max-w-7xl max-w-3xl' }"
   >
     <div class="w-full max-w-36 sm:max-w-64">

@@ -5,16 +5,21 @@
   >
     <div class="order-last grid grid-cols-4 gap-4 sm:grid-cols-5 sm:gap-5 lg:order-first lg:gap-4">
       <div v-for="member in memberInfoList" :key="member.id">
-        <NuxtLink :to="`/members/${member.id}`">
-        <div class="relative w-12.5 lg:w-25 group cursor-pointer">
-          <NuxtImg class="border border-gray-300 group-hover:border-primary-500 rounded-md" :src="member.memberImage ?? ''" alt="" loading="lazy" />
-          <UBadge
-            :label="member.name"
-            color="white"
-            class="absolute roup-hover:border-primary-500 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 -translate-y-3 w-max mx-auto transform transition-opacity transition-100 ease-in-out"
-          />
-        </div>
-      </NuxtLink>
+        <NuxtLink target="_blank" :to="`/members/${member.id}`">
+          <div class="w-12.5 lg:w-25 group relative cursor-pointer">
+            <NuxtImg
+              class="group-hover:border-primary-500 rounded-md border border-gray-300"
+              :src="member.memberImage ?? ''"
+              alt=""
+              loading="lazy"
+            />
+            <UBadge
+              :label="member.name"
+              color="white"
+              class="roup-hover:border-primary-500 transition-100 absolute left-1/2 mx-auto w-max -translate-x-1/2 -translate-y-3 transform opacity-0 transition-opacity ease-in-out group-hover:opacity-100"
+            />
+          </div>
+        </NuxtLink>
       </div>
     </div>
     <div class="flex flex-col items-center justify-center lg:items-start lg:justify-start">
@@ -25,8 +30,8 @@
         class="text-center text-2xl font-bold sm:text-4xl lg:text-start"
       />
       <p class="my-4 text-center text-sm sm:text-2xl lg:text-start">
-        The development of GDSC HANU led dedicated members. The community is made up of members with
-        different horizons and skills. We are happy to see new members every day and encourage
+        The development of GDSC HANU led to dedicated members. The community is made up of members
+        with different horizons and skills. We are happy to see new members every day and encourage
         anyone to join us and help in many ways.
       </p>
       <UButton
