@@ -15,7 +15,7 @@
     <UContainer class="my-10 md:flex md:flex-row md:items-center md:justify-between md:gap-16">
       <div class="basis-1/2">
         <div v-for="job in jobNavigationList" :key="job.jobId">
-          <nuxt-link to="/recruitment"
+          <NuxtLink to="/recruitment"
             ><UCard
               class="mb-4 cursor-pointer rounded-full px-4 py-2 transition duration-300 ease-in-out hover:bg-blue-50 lg:py-3 xl:py-4"
               :ui="{ body: '' }"
@@ -30,7 +30,7 @@
                 </div>
                 <UIcon name="i-heroicons-arrow-up-right-solid" class="w-15 h-15"></UIcon>
               </div> </UCard
-          ></nuxt-link>
+          ></NuxtLink>
         </div>
       </div>
       <div class="relative my-8 w-full basis-3/5 md:my-0 md:max-w-lg">

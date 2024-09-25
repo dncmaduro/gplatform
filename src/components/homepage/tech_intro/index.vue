@@ -26,10 +26,10 @@
     </div>
     <div class="grid grid-cols-5 gap-4 sm:gap-5">
       <div v-for="techstack in techstackList" :key="techstack.id">
-        <div class="relative w-full pt-[100%]" :ui="{ body: '' }">
-          <nuxt-link :to="techstack.url">
-            <UIcon :name="techstack.logo" class="absolute inset-0 h-full w-full"></UIcon>
-          </nuxt-link>
+        <div >
+          <NuxtLink target="_blank" :to="techstack.url">
+            <UIcon class="w-10 h-10 lg:w-20 lg:h-20" :name="techstack.logo"></UIcon>
+          </NuxtLink>
         </div>
       </div>
     </div>

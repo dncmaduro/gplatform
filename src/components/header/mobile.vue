@@ -17,7 +17,7 @@
           class="py-2"
           :class="$route.path === route.path ? 'border-primary border-b' : ''"
         >
-          <nuxt-link :to="route.path" class="px-1.5 py-2">{{ route.name }}</nuxt-link>
+          <NuxtLink :to="route.path" class="px-1.5 py-2">{{ route.name }}</NuxtLink>
         </li>
       </ul>
       <div class="flex w-full flex-col gap-2 md:gap-4">
